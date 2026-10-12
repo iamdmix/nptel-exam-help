@@ -26,7 +26,8 @@ export function buildSession({ course, weekNumbers, order, limit, mode }) {
 }
 
 export function isCorrect(q, chosen) {
-  const a = [...(q.answer || [])].sort().join('|')
+  if (!q.answer || q.answer.length === 0) return null // no answer key yet (unverified)
+  const a = [...q.answer].sort().join('|')
   const c = [...(chosen || [])].sort().join('|')
   return a === c && c.length > 0
 }
@@ -34,23 +35,29 @@ export function isCorrect(q, chosen) {
 export function gradeSession(session) {
   const results = session.questions.map((q) => {
     const chosen = session.answers[q.id] || []
-    const correct = isCorrect(q, chosen)
+    const correct = isCorrect(q, chosen) // null when the answer key is pending
     return { q, chosen, correct, flagged: session.flags.has(q.id) }
   })
-  const score = results.filter((r) => r.correct).length
+  const gradable = results.filter((r) => r.correct !== null)
+  const score = gradable.filter((r) => r.correct).length
+  const total = gradable.length
   const byWeek = {}
   for (const r of results) {
-    byWeek[r.q.week] = byWeek[r.q.week] || { total: 0, correct: 0 }
-    byWeek[r.q.week].total++
-    if (r.correct) byWeek[r.q.week].correct++
+    const w = (byWeek[r.q.week] = byWeek[r.q.week] || { total: 0, correct: 0, pending: 0 })
+    if (r.correct === null) w.pending++
+    else {
+      w.total++
+      if (r.correct) w.correct++
+    }
   }
   return {
     results,
     score,
-    total: results.length,
-    accuracy: results.length ? Math.round((score / results.length) * 100) : 0,
+    total,
+    pending: results.length - gradable.length,
+    accuracy: total ? Math.round((score / total) * 100) : 0,
     byWeek,
-    incorrect: results.filter((r) => !r.correct),
+    incorrect: results.filter((r) => r.correct === false),
   }
 }
 

@@ -7,6 +7,7 @@ function StatusDot({ state }) {
     answered: 'bg-blue-500',
     correct: 'bg-green-500',
     incorrect: 'bg-red-500',
+    pending: 'bg-slate-400 dark:bg-slate-500',
   }
   return <span className={`inline-block w-2 h-2 rounded-full ${colors[state]}`} />
 }
@@ -43,6 +44,7 @@ export default function Quiz({ session, setSession, onFinish }) {
 
   const statusOf = useMemo(
     () => (qq) => {
+      if (!qq.answer || qq.answer.length === 0) return 'pending'
       if (graded[qq.id] !== undefined) return graded[qq.id] ? 'correct' : 'incorrect'
       if ((answers[qq.id] || []).length > 0) return 'answered'
       return 'unanswered'
@@ -59,13 +61,17 @@ export default function Quiz({ session, setSession, onFinish }) {
       setAnswers(next)
     } else {
       setAnswers([opt])
-      if (instant) setSession((s) => ({ ...s, graded: { ...s.graded, [q.id]: isCorrect(q, [opt]) } }))
+      if (instant) {
+        const c = isCorrect(q, [opt])
+        if (c !== null) setSession((s) => ({ ...s, graded: { ...s.graded, [q.id]: c } }))
+      }
     }
   }
 
   const checkMulti = () => {
     if (!instant || gradedThis) return
-    setSession((s) => ({ ...s, graded: { ...s.graded, [q.id]: isCorrect(q, chosen) } }))
+    const c = isCorrect(q, chosen)
+    if (c !== null) setSession((s) => ({ ...s, graded: { ...s.graded, [q.id]: c } }))
   }
 
   const goto = (i) => setSession((s) => ({ ...s, currentIndex: Math.max(0, Math.min(questions.length - 1, i)) }))
@@ -121,11 +127,30 @@ export default function Quiz({ session, setSession, onFinish }) {
           </button>
         </div>
         <h2 className="font-semibold text-lg leading-relaxed mb-4">{q.question}</h2>
-        <p className="text-xs text-slate-500 mb-3">
-          {q.type === 'multiple_choice' ? 'Select all that apply' : 'Select one answer'}
-        </p>
 
-        <div className="space-y-2">
+        {q.context && (
+          <details className="mb-4 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/60">
+            <summary className="cursor-pointer select-none px-4 py-2.5 text-sm font-semibold">
+              📄 Read the passage
+            </summary>
+            <div className="px-4 pb-4 text-sm whitespace-pre-line leading-relaxed text-slate-700 dark:text-slate-300">
+              {q.context}
+            </div>
+          </details>
+        )}
+
+        {q.answer && q.answer.length === 0 ? (
+          <div className="rounded-xl border border-amber-300 dark:border-amber-700 bg-amber-50 dark:bg-amber-950/40 p-4 text-sm text-amber-800 dark:text-amber-300">
+            ⏳ <span className="font-semibold">Answer key pending.</span> This question is from an
+            unverified week — options and the accepted answer will be added once the official
+            solutions are released.
+          </div>
+        ) : (
+          <>
+            <p className="text-xs text-slate-500 mb-3">
+              {q.type === 'multiple_choice' ? 'Select all that apply' : 'Select one answer'}
+            </p>
+            <div className="space-y-2">
           {q.options.map((opt) => {
             const isPicked = chosen.includes(opt)
             const isCorrectOpt = correctOptions.includes(opt)
@@ -162,7 +187,9 @@ export default function Quiz({ session, setSession, onFinish }) {
               </button>
             )
           })}
-        </div>
+            </div>
+          </>
+        )}
 
         {selectedButUngraded && (
           <button
@@ -216,6 +243,7 @@ export default function Quiz({ session, setSession, onFinish }) {
           <div className="flex flex-wrap gap-3 text-xs text-slate-500">
             <span><StatusDot state="unanswered" /> Unanswered</span>
             <span><StatusDot state="answered" /> Answered</span>
+            <span><StatusDot state="pending" /> Key pending</span>
             {instant && (
               <>
                 <span><StatusDot state="correct" /> Correct</span>

@@ -32,6 +32,12 @@ export default function Results({ report, mode, onRetryWrong, onHome }) {
       </div>
 
       <h2 className="font-semibold mb-3">Week-by-Week Performance</h2>
+      {report.pending > 0 && (
+        <p className="mb-3 rounded-xl border border-amber-300 dark:border-amber-700 bg-amber-50 dark:bg-amber-950/40 p-3 text-sm text-amber-800 dark:text-amber-300">
+          ⏳ {report.pending} question(s) from unverified weeks were excluded from scoring (answer
+          key pending).
+        </p>
+      )}
       <div className="space-y-2 mb-8">
         {Object.entries(byWeek)
           .sort((a, b) => a[0] - b[0])

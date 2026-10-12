@@ -28,6 +28,10 @@ export default function QuizConfig({ course, onBack, onStart }) {
   const toggleAll = () =>
     setSelectedWeeks(allWeeks ? new Set() : new Set(course.weeks.map((w) => w.weekNumber)))
 
+  const weekMin = course.weeks.length ? course.weeks[0].weekNumber : 0
+  const weekMax = course.weeks.length ? course.weeks[course.weeks.length - 1].weekNumber : 0
+  const hasPendingWeek = course.weeks.some((w) => w.verified === false)
+
   const canStart = selectedWeeks.size > 0
 
   const start = () =>
@@ -57,7 +61,7 @@ export default function QuizConfig({ course, onBack, onStart }) {
                 : 'border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800'
             }`}
           >
-            All Weeks (0–{course.weeks.length - 1})
+            All Weeks ({weekMin}–{weekMax})
           </button>
         </div>
         <div className="grid grid-cols-4 sm:grid-cols-7 gap-2">
@@ -65,16 +69,23 @@ export default function QuizConfig({ course, onBack, onStart }) {
             <button
               key={w.weekNumber}
               onClick={() => toggleWeek(w.weekNumber)}
+              title={w.verified === false ? 'Answer key pending (unverified)' : w.title}
               className={`py-2 rounded-xl border text-sm font-medium transition ${
                 selectedWeeks.has(w.weekNumber)
                   ? 'bg-blue-600 text-white border-blue-600'
                   : 'border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800'
               }`}
             >
-              {w.weekNumber === 0 ? 'W0' : w.weekNumber}
+              W{w.weekNumber}
+              {w.verified === false && <span aria-hidden>⏳</span>}
             </button>
           ))}
         </div>
+        {hasPendingWeek && (
+          <p className="mt-2 text-xs text-amber-600 dark:text-amber-400">
+            ⏳ Week 12 is unverified — its answer key is pending and its questions won't be scored.
+          </p>
+        )}
         <p className="mt-2 text-sm text-slate-500">
           {selectedWeeks.size} week(s) selected · {poolSize} questions in pool
         </p>
