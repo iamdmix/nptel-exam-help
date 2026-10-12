@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 
 const LIMITS = [10, 25, 50, 'all']
 
@@ -7,6 +7,11 @@ export default function QuizConfig({ course, onBack, onStart }) {
   const [order, setOrder] = useState('sequential')
   const [limit, setLimit] = useState('all')
   const [mode, setMode] = useState('practice')
+  const [layout, setLayout] = useState(() => localStorage.getItem('quizLayout') || 'paged')
+
+  useEffect(() => {
+    localStorage.setItem('quizLayout', layout)
+  }, [layout])
 
   const poolSize = useMemo(
     () =>
@@ -40,6 +45,7 @@ export default function QuizConfig({ course, onBack, onStart }) {
       order,
       limit: limit === 'all' ? 'all' : Number(limit),
       mode,
+      layout,
     })
 
   return (
@@ -161,6 +167,31 @@ export default function QuizConfig({ course, onBack, onStart }) {
               <div className="font-semibold text-sm">{m.name}</div>
               <div className={`text-xs mt-1 ${mode === m.id ? 'text-blue-100' : 'text-slate-500'}`}>
                 {m.desc}
+              </div>
+            </button>
+          ))}
+        </div>
+      </section>
+
+      <section className="mb-8">
+        <h2 className="font-semibold mb-2">5. View Layout</h2>
+        <div className="flex gap-2">
+          {[
+            { id: 'paged', name: 'One question per page', desc: 'Navigate with Prev/Next, one card at a time' },
+            { id: 'scroll', name: 'Single page (scroll)', desc: 'All selected questions listed one below the other' },
+          ].map((l) => (
+            <button
+              key={l.id}
+              onClick={() => setLayout(l.id)}
+              className={`flex-1 text-left p-4 rounded-xl border transition ${
+                layout === l.id
+                  ? 'bg-blue-600 text-white border-blue-600'
+                  : 'border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800'
+              }`}
+            >
+              <div className="font-semibold text-sm">{l.name}</div>
+              <div className={`text-xs mt-1 ${layout === l.id ? 'text-blue-100' : 'text-slate-500'}`}>
+                {l.desc}
               </div>
             </button>
           ))}

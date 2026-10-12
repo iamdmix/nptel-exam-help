@@ -1,3 +1,5 @@
+import { flattenQuestions } from './data'
+
 export function shuffle(arr) {
   const a = [...arr]
   for (let i = a.length - 1; i > 0; i--) {
@@ -7,12 +9,13 @@ export function shuffle(arr) {
   return a
 }
 
-export function buildSession({ course, weekNumbers, order, limit, mode }) {
+export function buildSession({ course, weekNumbers, order, limit, mode, layout }) {
   const pool = flattenQuestions(course).filter((q) => weekNumbers.includes(q.week))
   let selected = order === 'randomized' ? shuffle(pool) : pool
   if (limit && limit !== 'all') selected = selected.slice(0, Number(limit))
   return {
     mode, // 'practice' | 'instant' | 'mock'
+    layout: layout === 'scroll' ? 'scroll' : 'paged',
     course,
     questions: selected,
     answers: {},

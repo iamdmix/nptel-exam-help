@@ -88,6 +88,7 @@ export default function App() {
               if (wrong.length) {
                 setSession({
                   mode: 'practice',
+                  layout: session.layout,
                   course: session.course,
                   questions: wrong,
                   answers: {},

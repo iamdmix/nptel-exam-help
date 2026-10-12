@@ -13,15 +13,13 @@ function StatusDot({ state }) {
 }
 
 export default function Quiz({ session, setSession, onFinish }) {
-  const { questions, answers, flags, graded, currentIndex, mode } = session
-  const q = questions[currentIndex]
-  const chosen = answers[q.id] || []
-  const gradedThis = graded[q.id] !== undefined
+  const { questions, answers, flags, graded, mode } = session
+  const scroll = session.layout === 'scroll'
   const instant = mode !== 'mock'
-  const bottomRef = useRef(null)
-
-  // Track elapsed seconds in state so renders stay pure
+  const [current, setCurrent] = useState(0)
+  const cardRefs = useRef({})
   const timerState = useRef({})
+
   const [elapsedSec, setElapsedSec] = useState(0)
   useEffect(() => {
     const id = setInterval(() => setElapsedSec((t) => t + 1), 1000)
@@ -37,9 +35,7 @@ export default function Quiz({ session, setSession, onFinish }) {
     }
   }, [remainingSec, onFinish])
 
-  const answerCount = questions.filter(
-    (qq) => (answers[qq.id] || []).length > 0
-  ).length
+  const answerCount = questions.filter((qq) => (answers[qq.id] || []).length > 0).length
   const progress = Math.round((answerCount / questions.length) * 100)
 
   const statusOf = useMemo(
@@ -52,49 +48,177 @@ export default function Quiz({ session, setSession, onFinish }) {
     [answers, graded]
   )
 
-  const setAnswers = (next) => setSession((s) => ({ ...s, answers: { ...s.answers, [q.id]: next } }))
-
-  const pick = (opt) => {
-    if (instant && gradedThis) return
-    if (q.type === 'multiple_choice') {
+  const pickFor = (qq, opt) => {
+    if (qq.answer && qq.answer.length === 0) return
+    if (instant && graded[qq.id] !== undefined) return
+    const chosen = answers[qq.id] || []
+    if (qq.type === 'multiple_choice') {
       const next = chosen.includes(opt) ? chosen.filter((o) => o !== opt) : [...chosen, opt]
-      setAnswers(next)
+      setSession((s) => ({ ...s, answers: { ...s.answers, [qq.id]: next } }))
     } else {
-      setAnswers([opt])
+      setSession((s) => ({ ...s, answers: { ...s.answers, [qq.id]: [opt] } }))
       if (instant) {
-        const c = isCorrect(q, [opt])
-        if (c !== null) setSession((s) => ({ ...s, graded: { ...s.graded, [q.id]: c } }))
+        const c = isCorrect(qq, [opt])
+        if (c !== null) setSession((s) => ({ ...s, graded: { ...s.graded, [qq.id]: c } }))
       }
     }
   }
 
-  const checkMulti = () => {
-    if (!instant || gradedThis) return
-    const c = isCorrect(q, chosen)
-    if (c !== null) setSession((s) => ({ ...s, graded: { ...s.graded, [q.id]: c } }))
+  const checkMultiFor = (qq) => {
+    if (!instant || graded[qq.id] !== undefined) return
+    const c = isCorrect(qq, answers[qq.id] || [])
+    if (c !== null) setSession((s) => ({ ...s, graded: { ...s.graded, [qq.id]: c } }))
   }
 
-  const goto = (i) => setSession((s) => ({ ...s, currentIndex: Math.max(0, Math.min(questions.length - 1, i)) }))
-  const toggleFlag = () =>
+  const flagFor = (qq) =>
     setSession((s) => {
       const f = new Set(s.flags)
-      if (f.has(q.id)) f.delete(q.id)
-      else f.add(q.id)
+      if (f.has(qq.id)) f.delete(qq.id)
+      else f.add(qq.id)
       return { ...s, flags: f }
     })
 
-  const correctOptions = q.answer || []
-  const showExplanation = instant && gradedThis
-  const selectedButUngraded = instant && q.type === 'multiple_choice' && chosen.length > 0 && !gradedThis
+  const goTo = (i) => {
+    if (scroll) {
+      const qq = questions[i]
+      cardRefs.current[qq.id]?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    } else {
+      setCurrent(Math.max(0, Math.min(questions.length - 1, i)))
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    }
+  }
+
+  const renderCard = (qq, idx, isPaged) => {
+    const chosen = answers[qq.id] || []
+    const gradedThis = graded[qq.id] !== undefined
+    const hasKey = qq.answer && qq.answer.length > 0
+    const correctOptions = qq.answer || []
+    const showExplanation = instant && gradedThis
+    const selectedButUngraded = instant && qq.type === 'multiple_choice' && chosen.length > 0 && !gradedThis
+
+    return (
+      <div
+        key={qq.id}
+        ref={(el) => {
+          cardRefs.current[qq.id] = el
+        }}
+        className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-5 sm:p-6 scroll-mt-20"
+      >
+        <div className="flex items-start justify-between gap-3 mb-1">
+          <span className="text-xs font-mono text-slate-500">
+            {isPaged ? '' : `Q${idx + 1} · `}
+            {qq.weekTitle}
+          </span>
+          <button
+            onClick={() => flagFor(qq)}
+            className={`shrink-0 text-sm px-3 py-1 rounded-lg border transition ${
+              flags.has(qq.id)
+                ? 'bg-amber-400 text-white border-amber-400'
+                : 'border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800'
+            }`}
+            aria-label="Flag question"
+          >
+            {flags.has(qq.id) ? '🚩 Flagged' : '⚑ Flag'}
+          </button>
+        </div>
+        <h2 className="font-semibold text-lg leading-relaxed mb-4">{qq.question}</h2>
+
+        {qq.context && (
+          <details className="mb-4 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/60">
+            <summary className="cursor-pointer select-none px-4 py-2.5 text-sm font-semibold">
+              📄 Read the passage
+            </summary>
+            <div className="px-4 pb-4 text-sm whitespace-pre-line leading-relaxed text-slate-700 dark:text-slate-300">
+              {qq.context}
+            </div>
+          </details>
+        )}
+
+        {!hasKey ? (
+          <div className="rounded-xl border border-amber-300 dark:border-amber-700 bg-amber-50 dark:bg-amber-950/40 p-4 text-sm text-amber-800 dark:text-amber-300">
+            ⏳ <span className="font-semibold">Answer key pending.</span> This question is from an
+            unverified week — options and the accepted answer will be added once the official
+            solutions are released.
+          </div>
+        ) : (
+          <>
+            <p className="text-xs text-slate-500 mb-3">
+              {qq.type === 'multiple_choice' ? 'Select all that apply' : 'Select one answer'}
+            </p>
+            <div className="space-y-2">
+              {qq.options.map((opt) => {
+                const isPicked = chosen.includes(opt)
+                const isCorrectOpt = correctOptions.includes(opt)
+                let cls =
+                  'border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800'
+                if (showExplanation && isCorrectOpt)
+                  cls = 'border-green-500 bg-green-50 dark:bg-green-950/40 text-green-800 dark:text-green-300'
+                else if (showExplanation && isPicked)
+                  cls = 'border-red-500 bg-red-50 dark:bg-red-950/40 text-red-800 dark:text-red-300'
+                else if (isPicked) cls = 'border-blue-500 bg-blue-50 dark:bg-blue-950/40'
+                return (
+                  <button
+                    key={opt}
+                    onClick={() => pickFor(qq, opt)}
+                    disabled={showExplanation}
+                    className={`w-full text-left px-4 py-3 rounded-xl border transition ${cls}`}
+                  >
+                    <span className="flex items-center gap-2">
+                      <span
+                        className={`shrink-0 w-5 h-5 rounded-full border flex items-center justify-center text-xs ${
+                          qq.type === 'multiple_choice' ? 'rounded-md' : ''
+                        } ${
+                          isPicked
+                            ? 'bg-blue-600 text-white border-blue-600'
+                            : 'border-slate-400 dark:border-slate-500'
+                        }`}
+                      >
+                        {isPicked ? '✓' : ''}
+                      </span>
+                      {opt}
+                      {showExplanation && isCorrectOpt && <span className="ml-auto">✅</span>}
+                      {showExplanation && isPicked && !isCorrectOpt && <span className="ml-auto">❌</span>}
+                    </span>
+                  </button>
+                )
+              })}
+            </div>
+
+            {selectedButUngraded && (
+              <button
+                onClick={() => checkMultiFor(qq)}
+                className="mt-4 w-full py-2.5 rounded-xl bg-blue-600 text-white font-medium hover:bg-blue-700"
+              >
+                Check Answer
+              </button>
+            )}
+
+            {showExplanation && (
+              <div className="mt-4 rounded-xl border border-blue-200 dark:border-blue-900 bg-blue-50 dark:bg-blue-950/40 p-4 text-sm">
+                <div className="font-semibold mb-1">
+                  {graded[qq.id]
+                    ? '✅ Correct!'
+                    : '❌ Incorrect — correct answer: ' + correctOptions.join(', ')}
+                </div>
+                <p className="text-slate-700 dark:text-slate-300">{qq.explanation}</p>
+              </div>
+            )}
+          </>
+        )}
+      </div>
+    )
+  }
 
   return (
     <div className="max-w-3xl mx-auto">
-      {/* Timer & progress bar */}
+      {/* Progress bar */}
       <div className="flex items-center justify-between gap-4 mb-2 text-sm">
         <span className="font-medium">
-          Question {currentIndex + 1} of {questions.length}
+          {scroll ? `${questions.length} questions` : `Question ${current + 1} of ${questions.length}`}
         </span>
-        <span className="text-slate-500">{progress}% completed</span>
+        <span className="text-slate-500">
+          {answerCount}/{questions.length} answered · {progress}%
+        </span>
         <span
           className={`font-mono font-medium ${
             remainingSec !== null && remainingSec < 60 ? 'text-red-500' : ''
@@ -110,136 +234,55 @@ export default function Quiz({ session, setSession, onFinish }) {
         />
       </div>
 
-      {/* Question card */}
-      <div className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-5 sm:p-6">
-        <div className="flex items-start justify-between gap-3 mb-1">
-          <span className="text-xs font-mono text-slate-500">{q.weekTitle}</span>
-          <button
-            onClick={toggleFlag}
-            className={`shrink-0 text-sm px-3 py-1 rounded-lg border transition ${
-              flags.has(q.id)
-                ? 'bg-amber-400 text-white border-amber-400'
-                : 'border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800'
-            }`}
-            aria-label="Flag question"
-          >
-            {flags.has(q.id) ? '🚩 Flagged' : '⚑ Flag'}
-          </button>
+      {/* Questions */}
+      {scroll ? (
+        <div className="space-y-6">
+          {questions.map((qq, i) => renderCard(qq, i, false))}
         </div>
-        <h2 className="font-semibold text-lg leading-relaxed mb-4">{q.question}</h2>
-
-        {q.context && (
-          <details className="mb-4 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/60">
-            <summary className="cursor-pointer select-none px-4 py-2.5 text-sm font-semibold">
-              📄 Read the passage
-            </summary>
-            <div className="px-4 pb-4 text-sm whitespace-pre-line leading-relaxed text-slate-700 dark:text-slate-300">
-              {q.context}
-            </div>
-          </details>
-        )}
-
-        {q.answer && q.answer.length === 0 ? (
-          <div className="rounded-xl border border-amber-300 dark:border-amber-700 bg-amber-50 dark:bg-amber-950/40 p-4 text-sm text-amber-800 dark:text-amber-300">
-            ⏳ <span className="font-semibold">Answer key pending.</span> This question is from an
-            unverified week — options and the accepted answer will be added once the official
-            solutions are released.
-          </div>
-        ) : (
-          <>
-            <p className="text-xs text-slate-500 mb-3">
-              {q.type === 'multiple_choice' ? 'Select all that apply' : 'Select one answer'}
-            </p>
-            <div className="space-y-2">
-          {q.options.map((opt) => {
-            const isPicked = chosen.includes(opt)
-            const isCorrectOpt = correctOptions.includes(opt)
-            let cls =
-              'border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800'
-            if (showExplanation && isCorrectOpt)
-              cls = 'border-green-500 bg-green-50 dark:bg-green-950/40 text-green-800 dark:text-green-300'
-            else if (showExplanation && isPicked)
-              cls = 'border-red-500 bg-red-50 dark:bg-red-950/40 text-red-800 dark:text-red-300'
-            else if (isPicked) cls = 'border-blue-500 bg-blue-50 dark:bg-blue-950/40'
-            return (
+      ) : (
+        <>
+          {renderCard(questions[current], current, true)}
+          <div className="flex justify-between mt-4">
+            <button
+              onClick={() => goTo(current - 1)}
+              disabled={current === 0}
+              className="px-5 py-2.5 rounded-xl border border-slate-300 dark:border-slate-700 disabled:opacity-40 hover:bg-slate-100 dark:hover:bg-slate-800"
+            >
+              ← Prev
+            </button>
+            {current === questions.length - 1 ? (
               <button
-                key={opt}
-                onClick={() => pick(opt)}
-                disabled={showExplanation}
-                className={`w-full text-left px-4 py-3 rounded-xl border transition ${cls}`}
+                onClick={onFinish}
+                className="px-6 py-2.5 rounded-xl bg-green-600 text-white font-semibold hover:bg-green-700"
               >
-                <span className="flex items-center gap-2">
-                  <span
-                    className={`shrink-0 w-5 h-5 rounded-full border flex items-center justify-center text-xs ${
-                      q.type === 'multiple_choice' ? 'rounded-md' : ''
-                    } ${
-                      isPicked
-                        ? 'bg-blue-600 text-white border-blue-600'
-                        : 'border-slate-400 dark:border-slate-500'
-                    }`}
-                  >
-                    {isPicked ? '✓' : ''}
-                  </span>
-                  {opt}
-                  {showExplanation && isCorrectOpt && <span className="ml-auto">✅</span>}
-                  {showExplanation && isPicked && !isCorrectOpt && <span className="ml-auto">❌</span>}
-                </span>
+                {mode === 'mock' ? 'Submit Test' : 'Finish & Results →'}
               </button>
-            )
-          })}
-            </div>
-          </>
-        )}
-
-        {selectedButUngraded && (
-          <button
-            onClick={checkMulti}
-            className="mt-4 w-full py-2.5 rounded-xl bg-blue-600 text-white font-medium hover:bg-blue-700"
-          >
-            Check Answer
-          </button>
-        )}
-
-        {showExplanation && (
-          <div className="mt-4 rounded-xl border border-blue-200 dark:border-blue-900 bg-blue-50 dark:bg-blue-950/40 p-4 text-sm">
-            <div className="font-semibold mb-1">
-              {graded[q.id] ? '✅ Correct!' : '❌ Incorrect — correct answer: ' + correctOptions.join(', ')}
-            </div>
-            <p className="text-slate-700 dark:text-slate-300">{q.explanation}</p>
+            ) : (
+              <button
+                onClick={() => goTo(current + 1)}
+                className="px-6 py-2.5 rounded-xl bg-blue-600 text-white font-semibold hover:bg-blue-700"
+              >
+                Next →
+              </button>
+            )}
           </div>
-        )}
-      </div>
+        </>
+      )}
 
-      {/* Prev / Next */}
-      <div className="flex justify-between mt-4">
+      {/* Finish button for scroll mode */}
+      {scroll && (
         <button
-          onClick={() => goto(currentIndex - 1)}
-          disabled={currentIndex === 0}
-          className="px-5 py-2.5 rounded-xl border border-slate-300 dark:border-slate-700 disabled:opacity-40 hover:bg-slate-100 dark:hover:bg-slate-800"
+          onClick={onFinish}
+          className="mt-8 w-full py-3.5 rounded-xl bg-green-600 text-white font-semibold hover:bg-green-700"
         >
-          ← Prev
+          {mode === 'mock' ? 'Submit Test' : 'Finish & Results →'}
         </button>
-        {currentIndex === questions.length - 1 ? (
-          <button
-            onClick={onFinish}
-            className="px-6 py-2.5 rounded-xl bg-green-600 text-white font-semibold hover:bg-green-700"
-          >
-            {mode === 'mock' ? 'Submit Test' : 'Finish & Results →'}
-          </button>
-        ) : (
-          <button
-            onClick={() => goto(currentIndex + 1)}
-            className="px-6 py-2.5 rounded-xl bg-blue-600 text-white font-semibold hover:bg-blue-700"
-          >
-            Next →
-          </button>
-        )}
-      </div>
+      )}
 
       {/* Question navigation grid */}
-      <div className="mt-8" ref={bottomRef}>
-        <div className="flex items-center justify-between mb-2">
-          <h3 className="text-sm font-semibold">Question Navigator</h3>
+      <div className="mt-10">
+        <div className="flex items-center justify-between mb-2 flex-wrap gap-2">
+          <h3 className="text-sm font-semibold">Question Navigator {scroll && '(tap to scroll)'}</h3>
           <div className="flex flex-wrap gap-3 text-xs text-slate-500">
             <span><StatusDot state="unanswered" /> Unanswered</span>
             <span><StatusDot state="answered" /> Answered</span>
@@ -259,10 +302,10 @@ export default function Quiz({ session, setSession, onFinish }) {
             return (
               <button
                 key={qq.id}
-                onClick={() => goto(i)}
+                onClick={() => goTo(i)}
                 title={`Q${i + 1}`}
                 className={`relative py-2 rounded-lg text-xs font-medium border transition ${
-                  i === currentIndex
+                  !scroll && i === current
                     ? 'ring-2 ring-blue-500 border-blue-500'
                     : 'border-slate-200 dark:border-slate-800'
                 } ${
@@ -270,9 +313,11 @@ export default function Quiz({ session, setSession, onFinish }) {
                     ? 'bg-green-100 dark:bg-green-950 text-green-800 dark:text-green-300'
                     : st === 'incorrect'
                       ? 'bg-red-100 dark:bg-red-950 text-red-800 dark:text-red-300'
-                      : st === 'answered'
-                        ? 'bg-blue-100 dark:bg-blue-950 text-blue-800 dark:text-blue-300'
-                        : 'bg-white dark:bg-slate-900'
+                      : st === 'pending'
+                        ? 'bg-amber-50 dark:bg-amber-950/40 text-amber-600 dark:text-amber-400'
+                        : st === 'answered'
+                          ? 'bg-blue-100 dark:bg-blue-950 text-blue-800 dark:text-blue-300'
+                          : 'bg-white dark:bg-slate-900'
                 }`}
               >
                 {i + 1}
@@ -283,7 +328,7 @@ export default function Quiz({ session, setSession, onFinish }) {
             )
           })}
         </div>
-        {mode !== 'mock' && (
+        {instant && (
           <p className="mt-3 text-xs text-slate-500">
             Live score: {questions.filter((qq) => graded[qq.id]).length} correct /{' '}
             {questions.filter((qq) => graded[qq.id] !== undefined).length} evaluated
