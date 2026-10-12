@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import { isCorrect, formatTime } from '../lib/quiz'
 
 function StatusDot({ state }) {
