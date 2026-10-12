@@ -15,7 +15,8 @@ function StatusDot({ state }) {
 export default function Quiz({ session, setSession, onFinish }) {
   const { questions, answers, flags, graded, mode } = session
   const scroll = session.layout === 'scroll'
-  const instant = mode !== 'mock'
+  const autoGrade = mode === 'instant' // Instant Test grades on click; Practice grades on demand
+  const showFeedback = mode !== 'mock'
   const [current, setCurrent] = useState(0)
   const cardRefs = useRef({})
   const timerState = useRef({})
@@ -50,22 +51,24 @@ export default function Quiz({ session, setSession, onFinish }) {
 
   const pickFor = (qq, opt) => {
     if (qq.answer && qq.answer.length === 0) return
-    if (instant && graded[qq.id] !== undefined) return
+    if (graded[qq.id] !== undefined) return
     const chosen = answers[qq.id] || []
     if (qq.type === 'multiple_choice') {
       const next = chosen.includes(opt) ? chosen.filter((o) => o !== opt) : [...chosen, opt]
       setSession((s) => ({ ...s, answers: { ...s.answers, [qq.id]: next } }))
     } else {
-      setSession((s) => ({ ...s, answers: { ...s.answers, [qq.id]: [opt] } }))
-      if (instant) {
-        const c = isCorrect(qq, [opt])
+      // single choice: clicking the same option again deselects (change mind in practice)
+      const next = chosen.includes(opt) ? [] : [opt]
+      setSession((s) => ({ ...s, answers: { ...s.answers, [qq.id]: next } }))
+      if (autoGrade) {
+        const c = isCorrect(qq, next)
         if (c !== null) setSession((s) => ({ ...s, graded: { ...s.graded, [qq.id]: c } }))
       }
     }
   }
 
   const checkMultiFor = (qq) => {
-    if (!instant || graded[qq.id] !== undefined) return
+    if (graded[qq.id] !== undefined) return
     const c = isCorrect(qq, answers[qq.id] || [])
     if (c !== null) setSession((s) => ({ ...s, graded: { ...s.graded, [qq.id]: c } }))
   }
@@ -93,8 +96,12 @@ export default function Quiz({ session, setSession, onFinish }) {
     const gradedThis = graded[qq.id] !== undefined
     const hasKey = qq.answer && qq.answer.length > 0
     const correctOptions = qq.answer || []
-    const showExplanation = instant && gradedThis
-    const selectedButUngraded = instant && qq.type === 'multiple_choice' && chosen.length > 0 && !gradedThis
+    const showExplanation = showFeedback && gradedThis
+    const selectedButUngraded =
+      showFeedback &&
+      (mode === 'practice' || qq.type === 'multiple_choice') &&
+      chosen.length > 0 &&
+      !gradedThis
 
     return (
       <div
@@ -287,7 +294,7 @@ export default function Quiz({ session, setSession, onFinish }) {
             <span><StatusDot state="unanswered" /> Unanswered</span>
             <span><StatusDot state="answered" /> Answered</span>
             <span><StatusDot state="pending" /> Key pending</span>
-            {instant && (
+            {showFeedback && (
               <>
                 <span><StatusDot state="correct" /> Correct</span>
                 <span><StatusDot state="incorrect" /> Incorrect</span>
@@ -328,7 +335,7 @@ export default function Quiz({ session, setSession, onFinish }) {
             )
           })}
         </div>
-        {instant && (
+        {showFeedback && (
           <p className="mt-3 text-xs text-slate-500">
             Live score: {questions.filter((qq) => graded[qq.id]).length} correct /{' '}
             {questions.filter((qq) => graded[qq.id] !== undefined).length} evaluated

@@ -1869,6 +1869,1885 @@
           ]
         }
       ]
+    },
+    {
+      "id": "geographic-information-system",
+      "title": "Geographic Information System",
+      "code": "NPTEL · IIT Kharagpur · Jul-2026",
+      "weeks": [
+        {
+          "weekNumber": 0,
+          "title": "Week 0",
+          "questions": [
+            {
+              "id": "w0q1",
+              "type": "single_choice",
+              "question": "According to you, Geographical Information System (GIS) can be defined as?",
+              "options": [
+                "Systematic analysis of Earth and atmosphere",
+                "Application of Geography with computer aided technology to solve physical problems",
+                "Technology to assess geographical patterns",
+                "Software and tool used as modern surveying methods"
+              ],
+              "answer": [
+                "Application of Geography with computer aided technology to solve physical problems"
+              ],
+              "explanation": "Self-explanatory/explained in lectures."
+            },
+            {
+              "id": "w0q2",
+              "type": "single_choice",
+              "question": "GIS differs from surveying and mapping by introducing",
+              "options": [
+                "Spatial analysis",
+                "Attribute descriptions",
+                "Location determination",
+                "Temporal information"
+              ],
+              "answer": [
+                "Spatial analysis"
+              ],
+              "explanation": "Self-explanatory/explained in lectures."
+            },
+            {
+              "id": "w0q3",
+              "type": "single_choice",
+              "question": "India appears ____________ of equator and ____________ of Greenwich Prime Meridian.",
+              "options": [
+                "South, East",
+                "North, West",
+                "North, East",
+                "South, West"
+              ],
+              "answer": [
+                "North, East"
+              ],
+              "explanation": "Self-explanatory/explained in lectures."
+            },
+            {
+              "id": "w0q4",
+              "type": "single_choice",
+              "question": "Latitude and longitude use __________ system for measuring coordinates.",
+              "options": [
+                "Degrees",
+                "Meters",
+                "Feets",
+                "Kilometers"
+              ],
+              "answer": [
+                "Degrees"
+              ],
+              "explanation": "Self-explanatory/explained in lectures."
+            },
+            {
+              "id": "w0q5",
+              "type": "single_choice",
+              "question": "A small-scale map would show",
+              "options": [
+                "larger geographic area than a large-scale map",
+                "A smaller geographic area than a large-scale map",
+                "The same geographic area as a large-scale map, just at a smaller resolution",
+                "None of the above"
+              ],
+              "answer": [
+                "larger geographic area than a large-scale map"
+              ],
+              "explanation": "Self-explanatory/explained in lectures."
+            },
+            {
+              "id": "w0q6",
+              "type": "single_choice",
+              "question": "Scale of a map is defined as the ratio of _______ to ________.",
+              "options": [
+                "Angle on map to angle on ground",
+                "Area on ground to area on globe",
+                "Distance on map to distance on ground",
+                "All of the above"
+              ],
+              "answer": [
+                "Distance on map to distance on ground"
+              ],
+              "explanation": "Self-explanatory/explained in lectures."
+            },
+            {
+              "id": "w0q7",
+              "type": "single_choice",
+              "question": "Which of the following is NOT a component of GIS?",
+              "options": [
+                "Hardware",
+                "Software",
+                "People",
+                "Telescope"
+              ],
+              "answer": [
+                "Telescope"
+              ],
+              "explanation": "Self-explanatory/explained in lectures."
+            },
+            {
+              "id": "w0q8",
+              "type": "single_choice",
+              "question": "The navigation system of the USA is known as _________.",
+              "options": [
+                "IRNSS",
+                "GPS",
+                "GLONASS",
+                "Galileo"
+              ],
+              "answer": [
+                "GPS"
+              ],
+              "explanation": "Self-explanatory/explained in lectures."
+            },
+            {
+              "id": "w0q9",
+              "type": "single_choice",
+              "question": "Which of the following is an example of a GIS-based navigation service?",
+              "options": [
+                "Google Maps",
+                "Topographic maps",
+                "Ola cab services",
+                "OpenStreetMap"
+              ],
+              "answer": [
+                "Google Maps"
+              ],
+              "explanation": "Self-explanatory/explained in lectures."
+            },
+            {
+              "id": "w0q10",
+              "type": "single_choice",
+              "question": "GIS stands for _________.",
+              "options": [
+                "Geographic Information System",
+                "Global Information System",
+                "Geographical Internet Service",
+                "Global Imaging Software"
+              ],
+              "answer": [
+                "Geographic Information System"
+              ],
+              "explanation": "Self-explanatory/explained in lectures."
+            }
+          ]
+        },
+        {
+          "weekNumber": 1,
+          "title": "Week 1",
+          "questions": [
+            {
+              "id": "w1q1",
+              "type": "single_choice",
+              "question": "____________ analysis is descriptive and exploratory based on very large and complex data sets.",
+              "options": [
+                "Real time",
+                "Spatial",
+                "Geographic",
+                "Satellite data"
+              ],
+              "answer": [
+                "Spatial"
+              ],
+              "explanation": "Spatial analysis is descriptive and exploratory because GIS studies patterns, relationships, and trends using large spatial datasets such as maps, satellite imagery, and census information. It helps in understanding geographic phenomena and decision-making."
+            },
+            {
+              "id": "w1q2",
+              "type": "single_choice",
+              "question": "Majority of GIS definitions focus on data, software, hardware, __________ and __________.",
+              "options": [
+                "Storage and management",
+                "Capture and model",
+                "Retrieval and display",
+                "Users and methods"
+              ],
+              "answer": [
+                "Users and methods"
+              ],
+              "explanation": "Most GIS definitions include users and methods because GIS is not only about computers and software; it also depends on skilled people and systematic procedures for collecting, analysing, and interpreting spatial data."
+            },
+            {
+              "id": "w1q3",
+              "type": "single_choice",
+              "question": "An excel sheet linked to map with village name, population, area, number of households etc. is an example of ___________.",
+              "options": [
+                "Social data",
+                "Attribute data",
+                "Census data",
+                "Location data"
+              ],
+              "answer": [
+                "Attribute data"
+              ],
+              "explanation": "An Excel sheet linked with map information such as village name, population, area, and households is called attribute data because it provides descriptive information about geographic features stored in the map."
+            },
+            {
+              "id": "w1q4",
+              "type": "single_choice",
+              "question": "Keyboard, monitor, cables, digitizers and scanners belong to ____________.",
+              "options": [
+                "GIS database",
+                "GIS software",
+                "GIS hardware",
+                "GIS tools"
+              ],
+              "answer": [
+                "GIS hardware"
+              ],
+              "explanation": "Devices such as keyboards, monitors, scanners, digitizers, and cables are part of GIS hardware because they are the physical components required to input, process, display, and store GIS data."
+            },
+            {
+              "id": "w1q5",
+              "type": "single_choice",
+              "question": "Postal code is an example of __________.",
+              "options": [
+                "Attribute data",
+                "Geographic data",
+                "Spatial data",
+                "Satellite data"
+              ],
+              "answer": [
+                "Spatial data"
+              ],
+              "explanation": "A postal code represents a specific geographic location or area, therefore it is considered an example of spatial data. Spatial data describes the position or location of features on Earth."
+            },
+            {
+              "id": "w1q6",
+              "type": "single_choice",
+              "question": "GIS was 1st introduced by ___________, who is also considered as father of GIS.",
+              "options": [
+                "Roger Tomlinson",
+                "Ian McHarg",
+                "George Everest",
+                "David Cowen"
+              ],
+              "answer": [
+                "Roger Tomlinson"
+              ],
+              "explanation": "Roger Tomlinson is known as the “Father of GIS” because he developed the first operational Geographic Information System, the Canada Geographic Information System (CGIS), in the 1960s."
+            },
+            {
+              "id": "w1q7",
+              "type": "single_choice",
+              "question": "Direct coordinate entry is an example for ____________.",
+              "options": [
+                "Data manipulation",
+                "Data analysis",
+                "Data input",
+                "Modelling"
+              ],
+              "answer": [
+                "Data input"
+              ],
+              "explanation": "Direct coordinate entry is a method of data input because geographic coordinates are entered directly into the GIS system to create or define spatial features."
+            },
+            {
+              "id": "w1q8",
+              "type": "single_choice",
+              "question": "Web GIS consists of ______________ and ____________.",
+              "options": [
+                "Server and client",
+                "Coding and browser",
+                "Server and coding",
+                "Browser and client"
+              ],
+              "answer": [
+                "Server and client"
+              ],
+              "explanation": "Web GIS works through a combination of a server and client. The server stores and processes GIS data, while the client (web browser or application) allows users to access and visualize the information online."
+            },
+            {
+              "id": "w1q9",
+              "type": "single_choice",
+              "question": "“Bhuvan” is the Indian Geo-platform to obtain",
+              "options": [
+                "Satellite data",
+                "Rainfall data",
+                "Vector data",
+                "All of the above"
+              ],
+              "answer": [
+                "All of the above"
+              ],
+              "explanation": "Bhuvan, developed by Indian Space Research Organisation, provides multiple types of geospatial information including satellite imagery, rainfall data, and vector layers. Therefore, the correct answer is All of the above."
+            },
+            {
+              "id": "w1q10",
+              "type": "single_choice",
+              "question": "Attribute data is managed and manipulated by _____________.",
+              "options": [
+                "DBMS",
+                "Metadata",
+                "Spatial editing",
+                "Data investigation"
+              ],
+              "answer": [
+                "DBMS"
+              ],
+              "explanation": "Attribute data is managed using a DBMS (Database Management System) because DBMS organizes, stores, updates, and retrieves non-spatial information linked to geographic features in GIS."
+            }
+          ]
+        },
+        {
+          "weekNumber": 2,
+          "title": "Week 2",
+          "questions": [
+            {
+              "id": "w2q1",
+              "type": "single_choice",
+              "question": "In a real-world model, the attributes are linked to _____________.",
+              "options": [
+                "Map symbols",
+                "Data quality",
+                "Database",
+                "Machine code"
+              ],
+              "answer": [
+                "Database"
+              ],
+              "explanation": "In a real-world GIS model, attributes are linked to a database because databases store descriptive information (such as name, population, or land use) associated with spatial features shown on maps."
+            },
+            {
+              "id": "w2q2",
+              "type": "single_choice",
+              "question": "Ranking of an attribute is given by _____________ scale.",
+              "options": [
+                "Nominal",
+                "Ratio",
+                "Ordinal",
+                "Interval"
+              ],
+              "answer": [
+                "Ordinal"
+              ],
+              "explanation": "The ordinal scale is used for ranking attributes because it arranges data in a meaningful order or hierarchy, such as low, medium, and high, without specifying exact differences between them."
+            },
+            {
+              "id": "w2q3",
+              "type": "single_choice",
+              "question": "An electrical power cable can be represented appropriately using ___________ graphical feature.",
+              "options": [
+                "Polygons",
+                "Lines",
+                "Points",
+                "All of the above"
+              ],
+              "answer": [
+                "Lines"
+              ],
+              "explanation": "An electrical power cable is best represented using a line feature because it has length and connectivity but negligible width when mapped in GIS."
+            },
+            {
+              "id": "w2q4",
+              "type": "single_choice",
+              "question": "Terrain of a place is categorised as _____________ phenomena.",
+              "options": [
+                "Discrete",
+                "Static",
+                "Fuzzy",
+                "Continuous"
+              ],
+              "answer": [
+                "Continuous"
+              ],
+              "explanation": "Terrain is considered a continuous phenomenon because elevation and landforms change gradually over space rather than existing as separate isolated features."
+            },
+            {
+              "id": "w2q5",
+              "type": "single_choice",
+              "question": "Which of the following activity in a GIS routine is tedious and expensive?",
+              "options": [
+                "Data processing",
+                "Data collection",
+                "Data analysis",
+                "Data manipulation"
+              ],
+              "answer": [
+                "Data collection"
+              ],
+              "explanation": "Data collection is the most tedious and expensive activity in GIS because gathering accurate spatial and attribute data from surveys, satellites, GPS, or fieldwork requires significant time, effort, and resources."
+            },
+            {
+              "id": "w2q6",
+              "type": "single_choice",
+              "question": "While dealing with a raster data, one of the key considerations is____________.",
+              "options": [
+                "Resolution",
+                "Time",
+                "Attribute",
+                "Expenditure"
+              ],
+              "answer": [
+                "Resolution"
+              ],
+              "explanation": "In raster data, resolution is a key consideration because it determines the size of each pixel and the level of detail represented in the dataset. Higher resolution provides more detail but requires larger storage and processing capacity."
+            },
+            {
+              "id": "w2q7",
+              "type": "single_choice",
+              "question": "Every sample has equal probability to be chosen in __________ sampling.",
+              "options": [
+                "Stratified",
+                "Systematic",
+                "Random",
+                "Symmetric"
+              ],
+              "answer": [
+                "Random"
+              ],
+              "explanation": "In random sampling, every sample has an equal probability of being selected. This reduces bias and ensures fair representation of the population."
+            },
+            {
+              "id": "w2q8",
+              "type": "single_choice",
+              "question": "Digitizing is a method adopted to generate ___________ data.",
+              "options": [
+                "Primary",
+                "Vector",
+                "Raster",
+                "All of the above"
+              ],
+              "answer": [
+                "Vector"
+              ],
+              "explanation": "Digitizing is mainly used to generate vector data by converting maps, drawings, or images into digital points, lines, and polygons within a GIS environment."
+            },
+            {
+              "id": "w2q9",
+              "type": "single_choice",
+              "question": "Migration and housing data are examples of _________ data.",
+              "options": [
+                "Attribute",
+                "Framework",
+                "Topographic",
+                "Socio-economic"
+              ],
+              "answer": [
+                "Socio-economic"
+              ],
+              "explanation": "Migration and housing information are examples of socio-economic data because they describe social and economic characteristics of a population."
+            },
+            {
+              "id": "w2q10",
+              "type": "single_choice",
+              "question": "Dangles are _____________ errors that occur during vector data input.",
+              "options": [
+                "Systematic",
+                "Random",
+                "Digitizing",
+                "Scanning"
+              ],
+              "answer": [
+                "Digitizing"
+              ],
+              "explanation": "Dangles are digitizing errors that occur during vector data input when lines fail to connect properly, such as overshoots or undershoots in network mapping."
+            }
+          ]
+        },
+        {
+          "weekNumber": 3,
+          "title": "Week 3",
+          "questions": [
+            {
+              "id": "w3q1",
+              "type": "single_choice",
+              "question": "Elevation map is an example of _____________ data.",
+              "options": [
+                "Discrete",
+                "Vector",
+                "Continuous",
+                "Categorical"
+              ],
+              "answer": [
+                "Continuous"
+              ],
+              "explanation": "An elevation map is considered continuous data because elevation changes gradually across the Earth’s surface rather than existing as separate isolated values."
+            },
+            {
+              "id": "w3q2",
+              "type": "single_choice",
+              "question": "____________ describes the world as a space filled with discrete, identifiable units.",
+              "options": [
+                "Objects",
+                "Fields",
+                "Polygons",
+                "Regular points"
+              ],
+              "answer": [
+                "Objects"
+              ],
+              "explanation": "The object model describes the world as being made up of discrete and identifiable entities such as roads, buildings, rivers, and parcels of land."
+            },
+            {
+              "id": "w3q3",
+              "type": "single_choice",
+              "question": "In a vector model, ____________ are usually called as nodes.",
+              "options": [
+                "Lines",
+                "End points",
+                "Intermediate points",
+                "All of the above"
+              ],
+              "answer": [
+                "End points"
+              ],
+              "explanation": "In a vector model, end points are called nodes because they define the start and end locations of line features and help establish spatial connectivity."
+            },
+            {
+              "id": "w3q4",
+              "type": "single_choice",
+              "question": "The degree of agreement between several measurements of a quantity is denoted as_______________.",
+              "options": [
+                "Accuracy",
+                "Discrete",
+                "Fuzzy",
+                "Precision"
+              ],
+              "answer": [
+                "Precision"
+              ],
+              "explanation": "Precision refers to the degree of agreement among repeated measurements of the same quantity. Higher precision means the measurements are very close to each other."
+            },
+            {
+              "id": "w3q5",
+              "type": "single_choice",
+              "question": "Redundancy of data can be observed in _________ model.",
+              "options": [
+                "Topological",
+                "Spaghetti",
+                "Raster",
+                "Quad-tree"
+              ],
+              "answer": [
+                "Spaghetti"
+              ],
+              "explanation": "Data redundancy is common in the spaghetti model because spatial relationships are not stored efficiently, causing repeated storage of boundaries and coordinates."
+            },
+            {
+              "id": "w3q6",
+              "type": "single_choice",
+              "question": "The disadvantage of quad tree model is/are __________.",
+              "options": [
+                "Processing time",
+                "Huge storage capacity",
+                "Prolong alterations",
+                "All of the above"
+              ],
+              "answer": [
+                "All of the above"
+              ],
+              "explanation": "The quad-tree model may suffer from disadvantages such as increased processing time, large storage requirements, and complex alterations, therefore the correct answer is All of the above."
+            },
+            {
+              "id": "w3q7",
+              "type": "single_choice",
+              "question": "_____________ describe the terrain surface including the above ground objects numerically in the form of x, y, and z coordinates.",
+              "options": [
+                "Digital terrain model",
+                "Digital surface model",
+                "Digital elevation model",
+                "All of the above"
+              ],
+              "answer": [
+                "Digital surface model"
+              ],
+              "explanation": "A Digital Surface Model (DSM) represents terrain surfaces along with above-ground features such as buildings, vegetation, and other objects using x, y, and z coordinates."
+            },
+            {
+              "id": "w3q8",
+              "type": "single_choice",
+              "question": "Connectivity, area definition and contiguity are basic principles of ____________.",
+              "options": [
+                "Topology",
+                "Field model",
+                "Raster model",
+                "Discrete model"
+              ],
+              "answer": [
+                "Topology"
+              ],
+              "explanation": "Connectivity, area definition, and contiguity are the main principles of topology, which defines spatial relationships between geographic features in GIS."
+            },
+            {
+              "id": "w3q9",
+              "type": "single_choice",
+              "question": "An imaginary line on the ground joining the points having the same elevation at a specific interval is known as __________.",
+              "options": [
+                "Triangulated irregular network",
+                "Ridge line",
+                "Isoline",
+                "Valley line"
+              ],
+              "answer": [
+                "Isoline"
+              ],
+              "explanation": "An imaginary line joining points of equal elevation is called an isoline (or contour line). It is commonly used in topographic maps to represent terrain elevation."
+            },
+            {
+              "id": "w3q10",
+              "type": "single_choice",
+              "question": "A lake with its exact boundary can be marked using _______ model.",
+              "options": [
+                "Raster",
+                "TIN",
+                "Vector",
+                "DEM"
+              ],
+              "answer": [
+                "Vector"
+              ],
+              "explanation": "A lake with an exact boundary is best represented using the vector model because vector polygons can accurately define precise boundaries and shapes of geographic features."
+            }
+          ]
+        },
+        {
+          "weekNumber": 4,
+          "title": "Week 4",
+          "questions": [
+            {
+              "id": "w4q1",
+              "type": "single_choice",
+              "question": "1mm on a map drawn at a scale of 1:50,000 represent _________ on the ground.",
+              "options": [
+                "500 cm",
+                "50 cm",
+                "50 m",
+                "5 m"
+              ],
+              "answer": [
+                "50 m"
+              ],
+              "explanation": "A map scale of 1:50,000 means 1 unit on the map represents 50,000 of the same units on the ground. Therefore, 1 mm on the map = 50,000 mm = 50 m on the ground."
+            },
+            {
+              "id": "w4q2",
+              "type": "single_choice",
+              "question": "How is a city most likely to be represented on a 1:25,000 scale map?",
+              "options": [
+                "As a single point",
+                "As a line",
+                "As a collection of points",
+                "As a collection of points, lines and areas"
+              ],
+              "answer": [
+                "As a collection of points, lines and areas"
+              ],
+              "explanation": "On a 1:25,000 large-scale map, a city is shown in greater detail using points, lines, and areas to represent roads, buildings, rivers, and boundaries."
+            },
+            {
+              "id": "w4q3",
+              "type": "single_choice",
+              "question": "The _______ projection is an example of a cylindrical projection.",
+              "options": [
+                "State Plane Coordinate System (SPCS)",
+                "Azimuthal",
+                "Mercator",
+                "All of the above"
+              ],
+              "answer": [
+                "Mercator"
+              ],
+              "explanation": "The Mercator projection is a type of cylindrical projection because it projects the Earth’s surface onto a cylinder. It is widely used for navigation."
+            },
+            {
+              "id": "w4q4",
+              "type": "single_choice",
+              "question": "The prime meridian runs through _________________.",
+              "options": [
+                "Equator",
+                "Greenwich",
+                "Greenland",
+                "Moscow"
+              ],
+              "answer": [
+                "Greenwich"
+              ],
+              "explanation": "The Prime Meridian passes through Greenwich, England, and is defined as 0° longitude. It is the reference line for measuring east and west longitudes."
+            },
+            {
+              "id": "w4q5",
+              "type": "single_choice",
+              "question": "A small-scale map would show",
+              "options": [
+                "A larger geographic area than a large-scale map",
+                "A smaller geographic area than a large-scale map",
+                "The same geographic area as a large-scale map, just at a smaller resolution",
+                "None of the above"
+              ],
+              "answer": [
+                "A larger geographic area than a large-scale map"
+              ],
+              "explanation": "A small-scale map covers a larger geographic area but with less detail compared to a large-scale map. Examples include world or country maps."
+            },
+            {
+              "id": "w4q6",
+              "type": "single_choice",
+              "question": "___________ projection is accurate in the mid-latitude zone.",
+              "options": [
+                "Mercator",
+                "Conic",
+                "Azimuthal",
+                "Cylinder"
+              ],
+              "answer": [
+                "Conic"
+              ],
+              "explanation": "Conic projections are most accurate in the mid-latitude regions because distortion is minimized along the standard parallels. They are commonly used for regional maps."
+            },
+            {
+              "id": "w4q7",
+              "type": "single_choice",
+              "question": "Conformal maps could preserve __________ of a map property.",
+              "options": [
+                "Area",
+                "Distance",
+                "Direction",
+                "Shape"
+              ],
+              "answer": [
+                "Shape"
+              ],
+              "explanation": "Conformal maps preserve the shape of small areas and maintain local angles, although area and distance may become distorted."
+            },
+            {
+              "id": "w4q8",
+              "type": "single_choice",
+              "question": "Actual area of Greenland is __________ than/to Africa, and this is due to Mercator distortion.",
+              "options": [
+                "Much larger",
+                "Much smaller",
+                "Equal",
+                "None of the above"
+              ],
+              "answer": [
+                "Much smaller"
+              ],
+              "explanation": "Greenland appears much larger on the Mercator projection but in reality, its actual area is much smaller than Africa. This difference is caused by distortion near the poles."
+            },
+            {
+              "id": "w4q9",
+              "type": "single_choice",
+              "question": "Which of the following represents positions as X, Y and Z coordinates (3D)?",
+              "options": [
+                "Geographic coordinate system",
+                "Rectangular coordinate system",
+                "Planar coordinate system",
+                "Geocentric coordinate system"
+              ],
+              "answer": [
+                "Geocentric coordinate system"
+              ],
+              "explanation": "A geocentric coordinate system represents locations using X, Y, and Z coordinates in three-dimensional space, measured from the Earth’s centre."
+            },
+            {
+              "id": "w4q10",
+              "type": "single_choice",
+              "question": "Georeferencing using mailing address is also known as __________.",
+              "options": [
+                "Geocoding",
+                "Direct georeferencing",
+                "Continuous georeferencing",
+                "Relative georeferencing"
+              ],
+              "answer": [
+                "Geocoding"
+              ],
+              "explanation": "Assigning geographic coordinates using a mailing address is called geocoding. It converts addresses into spatial locations that can be mapped in GIS."
+            }
+          ]
+        },
+        {
+          "weekNumber": 5,
+          "title": "Week 5",
+          "questions": [
+            {
+              "id": "w5q1",
+              "type": "single_choice",
+              "question": "__________ refers to how closely repeated measurements agree with each other.",
+              "options": [
+                "Accuracy",
+                "Precision",
+                "Completeness",
+                "Consistency"
+              ],
+              "answer": [
+                "Precision"
+              ],
+              "explanation": "Precision measures the consistency of repeated measurements, regardless of whether they are close to the true value."
+            },
+            {
+              "id": "w5q2",
+              "type": "single_choice",
+              "question": "Which factor can reduce the reliability of GIS spatial data?",
+              "options": [
+                "Outdated datasets",
+                "Poor spatial resolution",
+                "Incorrect collection methods",
+                "All of the above"
+              ],
+              "answer": [
+                "All of the above"
+              ],
+              "explanation": "Reliability decreases when data is old, collected improperly, or has low spatial resolution."
+            },
+            {
+              "id": "w5q3",
+              "type": "single_choice",
+              "question": "An error matrix in remote sensing is mainly used for evaluating __________.",
+              "options": [
+                "Coordinate systems",
+                "Image classification results",
+                "Raster compression",
+                "Projection accuracy"
+              ],
+              "answer": [
+                "Image classification results"
+              ],
+              "explanation": "Error matrices compare classified images with reference data to assess classification accuracy."
+            },
+            {
+              "id": "w5q4",
+              "type": "single_choice",
+              "question": "Producer’s accuracy in a confusion matrix is calculated using __________.",
+              "options": [
+                "Row totals",
+                "Column totals",
+                "Total pixels",
+                "Non-diagonal elements"
+              ],
+              "answer": [
+                "Column totals"
+              ],
+              "explanation": "Producer’s accuracy is the ratio of correctly classified pixels to the column total."
+            },
+            {
+              "id": "w5q5",
+              "type": "single_choice",
+              "question": "Incorrect inclusion of pixels into a category is known as __________.",
+              "options": [
+                "Omission error",
+                "Commission error",
+                "Projection error",
+                "Topology error"
+              ],
+              "answer": [
+                "Commission error"
+              ],
+              "explanation": "Commission error occurs when pixels are wrongly assigned to a class where they do not belong."
+            },
+            {
+              "id": "w5q6",
+              "type": "single_choice",
+              "question": "Which of the following represents a topology error in vector GIS?",
+              "options": [
+                "Properly connected nodes",
+                "Closed polygons",
+                "Overshoots",
+                "Georeferenced raster"
+              ],
+              "answer": [
+                "Overshoots"
+              ],
+              "explanation": "Overshoots occur when vector lines extend beyond their intended intersection points."
+            },
+            {
+              "id": "w5q7",
+              "type": "single_choice",
+              "question": "Reducing the number of unnecessary vertices in a line feature is called __________.",
+              "options": [
+                "Line densification",
+                "Line simplification",
+                "Line buffering",
+                "Polygon clipping"
+              ],
+              "answer": [
+                "Line simplification"
+              ],
+              "explanation": "Line simplification reduces coordinate points while preserving the general shape of the feature."
+            },
+            {
+              "id": "w5q8",
+              "type": "single_choice",
+              "question": "The alignment of two raster datasets into the same coordinate framework is called __________.",
+              "options": [
+                "Buffering",
+                "Digitization",
+                "Coregistration",
+                "Reclassification"
+              ],
+              "answer": [
+                "Coregistration"
+              ],
+              "explanation": "Coregistration ensures multiple raster datasets spatially align correctly."
+            },
+            {
+              "id": "w5q9",
+              "type": "single_choice",
+              "question": "Which transformation method stretches a map layer to fit predefined control points?",
+              "options": [
+                "Geocoding",
+                "Clipping",
+                "Rubber sheeting",
+                "Buffering"
+              ],
+              "answer": [
+                "Rubber sheeting"
+              ],
+              "explanation": "Rubber sheeting adjusts spatial data geometrically to match reference control points."
+            },
+            {
+              "id": "w5q10",
+              "type": "single_choice",
+              "question": "In digital image processing, the dominant wavelength or actual color is represented by __________.",
+              "options": [
+                "Brightness",
+                "Intensity",
+                "Saturation",
+                "Hue"
+              ],
+              "answer": [
+                "Hue"
+              ],
+              "explanation": "Hue defines the actual perceived color such as red, green, or blue."
+            }
+          ]
+        },
+        {
+          "weekNumber": 6,
+          "title": "Week 6",
+          "questions": [
+            {
+              "id": "w6q1",
+              "type": "single_choice",
+              "question": "GPS determines the location of a receiver using the principle of __________.",
+              "options": [
+                "Triangulation",
+                "Trilateration",
+                "Reflection",
+                "Interpolation"
+              ],
+              "answer": [
+                "Trilateration"
+              ],
+              "explanation": "GPS works on the principle of trilateration, where distances from multiple satellites are used to determine the exact position of a receiver."
+            },
+            {
+              "id": "w6q2",
+              "type": "single_choice",
+              "question": "The GPS space segment mainly consists of __________ satellites.",
+              "options": [
+                "14",
+                "21",
+                "24",
+                "32"
+              ],
+              "answer": [
+                "24"
+              ],
+              "explanation": "The standard GPS constellation consists of 24 operational satellites orbiting the Earth."
+            },
+            {
+              "id": "w6q3",
+              "type": "single_choice",
+              "question": "GPS signals are transmitted in the __________ region of the electromagnetic spectrum.",
+              "options": [
+                "Visible",
+                "Infrared",
+                "Microwave",
+                "Ultraviolet"
+              ],
+              "answer": [
+                "Microwave"
+              ],
+              "explanation": "GPS satellites transmit signals in the microwave region because microwaves can pass through clouds, rain, and fog with minimal interference."
+            },
+            {
+              "id": "w6q4",
+              "type": "single_choice",
+              "question": "The Indian Regional Navigation Satellite System (IRNSS) consists of __________ satellites.",
+              "options": [
+                "5",
+                "6",
+                "7",
+                "8"
+              ],
+              "answer": [
+                "7"
+              ],
+              "explanation": "IRNSS, also known as NavIC is made up of 7 satellites providing regional navigation services around India."
+            },
+            {
+              "id": "w6q5",
+              "type": "single_choice",
+              "question": "Which GNSS system was developed by Russia?",
+              "options": [
+                "Galileo",
+                "GPS",
+                "QZSS",
+                "GLONASS"
+              ],
+              "answer": [
+                "GLONASS"
+              ],
+              "explanation": "GLONASS is the satellite navigation system developed and operated by Russia."
+            },
+            {
+              "id": "w6q6",
+              "type": "single_choice",
+              "question": "Errors in GPS signals caused due to reflection from nearby buildings are known as __________.",
+              "options": [
+                "Ephemeris errors",
+                "Multipath errors",
+                "Atmospheric delay",
+                "Receiver noise"
+              ],
+              "answer": [
+                "Multipath errors"
+              ],
+              "explanation": "Multipath errors occur when GPS signals bounce off buildings or other surfaces before reaching the receiver."
+            },
+            {
+              "id": "w6q7",
+              "type": "single_choice",
+              "question": "The largest source of GPS positioning error is generally caused by __________.",
+              "options": [
+                "Receiver noise",
+                "Multipath",
+                "Ionospheric delay",
+                "Satellite geometry"
+              ],
+              "answer": [
+                "Ionospheric delay"
+              ],
+              "explanation": "Charged particles in the ionosphere delay GPS signals, causing significant positioning errors."
+            },
+            {
+              "id": "w6q8",
+              "type": "single_choice",
+              "question": "WAAS is mainly used to improve __________.",
+              "options": [
+                "Satellite speed",
+                "Navigation accuracy",
+                "Map projection",
+                "Data storage"
+              ],
+              "answer": [
+                "Navigation accuracy"
+              ],
+              "explanation": "WAAS (Wide Area Augmentation System) improves GPS navigation accuracy and reliability, especially for aviation purposes."
+            },
+            {
+              "id": "w6q9",
+              "type": "single_choice",
+              "question": "The GPS master control station is located in __________.",
+              "options": [
+                "Nevada",
+                "Los Angeles",
+                "Colorado Springs",
+                "Washington DC"
+              ],
+              "answer": [
+                "Colorado Springs"
+              ],
+              "explanation": "The GPS master control station responsible for monitoring and controlling GPS satellites is located at Colorado Springs, USA."
+            },
+            {
+              "id": "w6q10",
+              "type": "single_choice",
+              "question": "Selective Availability (SA) in GPS was officially turned off in the year __________.",
+              "options": [
+                "1995",
+                "1998",
+                "2000",
+                "2005"
+              ],
+              "answer": [
+                "2000"
+              ],
+              "explanation": "Selective Availability, which intentionally reduced GPS accuracy for civilian users, was discontinued in 2000 to allow improved positioning accuracy."
+            }
+          ]
+        },
+        {
+          "weekNumber": 7,
+          "title": "Week 7",
+          "questions": [
+            {
+              "id": "w7q1",
+              "type": "single_choice",
+              "question": "Raw facts and figures collected for processing are known as __________.",
+              "options": [
+                "Information",
+                "Database",
+                "Data",
+                "Knowledge"
+              ],
+              "answer": [
+                "Data"
+              ],
+              "explanation": "Data refers to unprocessed facts and figures that can later be organized into meaningful information."
+            },
+            {
+              "id": "w7q2",
+              "type": "single_choice",
+              "question": "Organized and meaningful data is called __________.",
+              "options": [
+                "Tuple",
+                "Information",
+                "File",
+                "Record"
+              ],
+              "answer": [
+                "Information"
+              ],
+              "explanation": "When raw data is processed and arranged in a meaningful context, it becomes information."
+            },
+            {
+              "id": "w7q3",
+              "type": "single_choice",
+              "question": "A collection of related data stored systematically in a computer system is known as __________.",
+              "options": [
+                "Spreadsheet",
+                "Database",
+                "Network",
+                "Report"
+              ],
+              "answer": [
+                "Database"
+              ],
+              "explanation": "A database stores organized data in a structured manner for easy access and management."
+            },
+            {
+              "id": "w7q4",
+              "type": "single_choice",
+              "question": "The full form of DBMS is __________.",
+              "options": [
+                "Data Binary Management System",
+                "Data Base Management System",
+                "Database Memory System",
+                "Digital Base Management System"
+              ],
+              "answer": [
+                "Data Base Management System"
+              ],
+              "explanation": "DBMS stands for Database Management System, which helps in storing, managing, and retrieving data efficiently."
+            },
+            {
+              "id": "w7q5",
+              "type": "single_choice",
+              "question": "Which of the following is NOT a component of a database system?",
+              "options": [
+                "Query processor",
+                "Report writer",
+                "Key manager",
+                "Forms generator"
+              ],
+              "answer": [
+                "Key manager"
+              ],
+              "explanation": "Key manager is not considered a standard component of a database management system."
+            },
+            {
+              "id": "w7q6",
+              "type": "single_choice",
+              "question": "Which type of DBMS is most commonly used today?",
+              "options": [
+                "Hierarchical DBMS",
+                "Network DBMS",
+                "Relational DBMS",
+                "Object-oriented DBMS"
+              ],
+              "answer": [
+                "Relational DBMS"
+              ],
+              "explanation": "Relational DBMS (RDBMS) is the most widely used database model because it stores data in tables and supports efficient querying."
+            },
+            {
+              "id": "w7q7",
+              "type": "single_choice",
+              "question": "A field that uniquely identifies each record in a table is called __________.",
+              "options": [
+                "Foreign key",
+                "Secondary key",
+                "Primary key",
+                "Composite key"
+              ],
+              "answer": [
+                "Primary key"
+              ],
+              "explanation": "A primary key uniquely identifies every record or tuple in a relational database table."
+            },
+            {
+              "id": "w7q8",
+              "type": "single_choice",
+              "question": "In object-oriented databases, the process of hiding data and restricting direct access is called __________.",
+              "options": [
+                "Inheritance",
+                "Encapsulation",
+                "Identity",
+                "Binding"
+              ],
+              "answer": [
+                "Encapsulation"
+              ],
+              "explanation": "Encapsulation protects object data by restricting direct access and allowing controlled interaction through methods."
+            },
+            {
+              "id": "w7q9",
+              "type": "single_choice",
+              "question": "The process of organizing database tables to reduce redundancy is known as __________.",
+              "options": [
+                "Denormalization",
+                "Standardization",
+                "Normalization",
+                "Indexing"
+              ],
+              "answer": [
+                "Normalization"
+              ],
+              "explanation": "Normalization reduces duplication and improves data integrity by organizing tables efficiently."
+            },
+            {
+              "id": "w7q10",
+              "type": "single_choice",
+              "question": "Which of the following is NOT a relational database?",
+              "options": [
+                "Oracle",
+                "IBM DB2",
+                "MongoDB",
+                "Microsoft Access"
+              ],
+              "answer": [
+                "MongoDB"
+              ],
+              "explanation": "MongoDB is a NoSQL document-oriented database, while the others are relational databases."
+            }
+          ]
+        },
+        {
+          "weekNumber": 8,
+          "title": "Week 8",
+          "questions": [
+            {
+              "id": "w8q1",
+              "type": "single_choice",
+              "question": "In a database table, rows are called __________ and columns are called __________.",
+              "options": [
+                "Fields, records",
+                "Records, fields",
+                "Data, attributes",
+                "Attributes, tuples"
+              ],
+              "answer": [
+                "Records, fields"
+              ],
+              "explanation": "In a database, each row represents a record, while each column represents a field or attribute."
+            },
+            {
+              "id": "w8q2",
+              "type": "single_choice",
+              "question": "Which feature is mainly used to protect confidential database files?",
+              "options": [
+                "Saving",
+                "Indexing",
+                "Encryption",
+                "Classification"
+              ],
+              "answer": [
+                "Encryption"
+              ],
+              "explanation": "Encryption converts readable data into coded form to prevent unauthorized access."
+            },
+            {
+              "id": "w8q3",
+              "type": "single_choice",
+              "question": "SQL was originally developed by __________.",
+              "options": [
+                "Microsoft",
+                "IBM",
+                "Oracle",
+                "Google"
+              ],
+              "answer": [
+                "IBM"
+              ],
+              "explanation": "Structured Query Language (SQL) was initially developed by IBM for managing relational databases."
+            },
+            {
+              "id": "w8q4",
+              "type": "single_choice",
+              "question": "The technique used to physically locate data on a disk efficiently is called __________.",
+              "options": [
+                "Encryption",
+                "Normalization",
+                "Hashing",
+                "Classification"
+              ],
+              "answer": [
+                "Hashing"
+              ],
+              "explanation": "Hashing uses a hash function to quickly locate and retrieve stored data from disk storage."
+            },
+            {
+              "id": "w8q5",
+              "type": "single_choice",
+              "question": "Storing geometric and attribute data in separate databases within GIS is known as __________.",
+              "options": [
+                "Integrated system",
+                "Hybrid system",
+                "Spatial system",
+                "Logical system"
+              ],
+              "answer": [
+                "Hybrid system"
+              ],
+              "explanation": "A hybrid GIS stores spatial and attribute information separately but links them together during analysis."
+            },
+            {
+              "id": "w8q6",
+              "type": "single_choice",
+              "question": "Which of the following is a logical operator used in databases?",
+              "options": [
+                "+",
+                "×",
+                "AND",
+                "sin"
+              ],
+              "answer": [
+                "AND"
+              ],
+              "explanation": "AND is a logical operator used in database queries to combine conditions."
+            },
+            {
+              "id": "w8q7",
+              "type": "single_choice",
+              "question": "Which among the following is a statistical operation?",
+              "options": [
+                "Addition",
+                "Multiplication",
+                "Maximum",
+                "Subtraction"
+              ],
+              "answer": [
+                "Maximum"
+              ],
+              "explanation": "Maximum is a statistical operation used to determine the highest value within a dataset."
+            },
+            {
+              "id": "w8q8",
+              "type": "single_choice",
+              "question": "The process of grouping attributes according to user-defined limits is called __________.",
+              "options": [
+                "Classification",
+                "Rasterization",
+                "Digitization",
+                "Encryption"
+              ],
+              "answer": [
+                "Classification"
+              ],
+              "explanation": "Classification groups data into categories based on specified attribute ranges or rules."
+            },
+            {
+              "id": "w8q9",
+              "type": "single_choice",
+              "question": "Which GIS feature ensures proper connection between vertices and edges during digitization?",
+              "options": [
+                "Eraser",
+                "Snapping",
+                "Buffering",
+                "Overlay"
+              ],
+              "answer": [
+                "Snapping"
+              ],
+              "explanation": "Snapping helps maintain topological consistency by connecting new features accurately to existing ones."
+            },
+            {
+              "id": "w8q10",
+              "type": "single_choice",
+              "question": "Overlay analysis in GIS can be performed on __________.",
+              "options": [
+                "Raster data only",
+                "Vector data only",
+                "Both raster and vector data",
+                "Neither raster nor vector data"
+              ],
+              "answer": [
+                "Both raster and vector data"
+              ],
+              "explanation": "Overlay operations combine multiple spatial datasets and can be applied to both raster and vector formats."
+            }
+          ]
+        },
+        {
+          "weekNumber": 9,
+          "title": "Week 9",
+          "questions": [
+            {
+              "id": "w9q1",
+              "type": "single_choice",
+              "question": "Which of the following is a logical operation instead of an arithmetic operation?",
+              "options": [
+                "Addition",
+                "Multiplication",
+                "Equal to",
+                "Subtraction"
+              ],
+              "answer": [
+                "Equal to"
+              ],
+              "explanation": "Equal to is a logical comparison operator, while addition, subtraction, and multiplication are arithmetic operations."
+            },
+            {
+              "id": "w9q2",
+              "type": "single_choice",
+              "question": "The result of a buffer operation in GIS is generally a __________ feature.",
+              "options": [
+                "Point",
+                "Polygon",
+                "Raster",
+                "Line"
+              ],
+              "answer": [
+                "Polygon"
+              ],
+              "explanation": "Buffering creates polygon zones around spatial features at a specified distance."
+            },
+            {
+              "id": "w9q3",
+              "type": "single_choice",
+              "question": "Network analysis in GIS mainly depends on __________.",
+              "options": [
+                "Connected networks",
+                "Movement rules",
+                "Units of measurement",
+                "All of the above"
+              ],
+              "answer": [
+                "All of the above"
+              ],
+              "explanation": "Network analysis requires connected paths, movement rules, and measurement definitions for routing and accessibility analysis."
+            },
+            {
+              "id": "w9q4",
+              "type": "single_choice",
+              "question": "Bilinear interpolation uses the nearest __________ neighboring pixels.",
+              "options": [
+                "4",
+                "9",
+                "16",
+                "25"
+              ],
+              "answer": [
+                "4"
+              ],
+              "explanation": "Bilinear interpolation calculates new pixel values using the 4 nearest neighboring pixels."
+            },
+            {
+              "id": "w9q5",
+              "type": "single_choice",
+              "question": "Bicubic interpolation calculates output values using __________ neighboring pixels.",
+              "options": [
+                "4",
+                "8",
+                "16",
+                "25"
+              ],
+              "answer": [
+                "16"
+              ],
+              "explanation": "Bicubic interpolation considers the nearest 16 pixels to produce smoother image resampling results."
+            },
+            {
+              "id": "w9q6",
+              "type": "single_choice",
+              "question": "A GIS model representing terrain as continuous non-overlapping triangles is called __________.",
+              "options": [
+                "DEM",
+                "Contour",
+                "TIN",
+                "Spline"
+              ],
+              "answer": [
+                "TIN"
+              ],
+              "explanation": "TIN (Triangulated Irregular Network) represents surfaces using connected triangular facets."
+            },
+            {
+              "id": "w9q7",
+              "type": "single_choice",
+              "question": "A line joining locations of equal elevation on a map is known as a __________.",
+              "options": [
+                "Spline",
+                "Contour",
+                "Aspect line",
+                "Ridge line"
+              ],
+              "answer": [
+                "Contour"
+              ],
+              "explanation": "Contour lines connect points having the same elevation above mean sea level."
+            },
+            {
+              "id": "w9q8",
+              "type": "single_choice",
+              "question": "The rate of elevation change over a surface is called __________.",
+              "options": [
+                "Aspect",
+                "Slope",
+                "Relief",
+                "Curvature"
+              ],
+              "answer": [
+                "Slope"
+              ],
+              "explanation": "Slope measures the steepness or rate of change in elevation between locations."
+            },
+            {
+              "id": "w9q9",
+              "type": "single_choice",
+              "question": "Overlay analysis in GIS can be applied on __________.",
+              "options": [
+                "Raster data only",
+                "Vector data only",
+                "Both raster and vector data",
+                "Neither raster nor vector data"
+              ],
+              "answer": [
+                "Both raster and vector data"
+              ],
+              "explanation": "Overlay operations combine multiple spatial layers and can be performed on both raster and vector datasets."
+            },
+            {
+              "id": "w9q10",
+              "type": "single_choice",
+              "question": "In remote sensing, sensors that emit their own energy to capture data are called __________ sensors.",
+              "options": [
+                "Passive",
+                "Active",
+                "Optical",
+                "Thermal"
+              ],
+              "answer": [
+                "Active"
+              ],
+              "explanation": "Active remote sensing systems, such as radar, transmit their own energy and record the reflected signal from Earth’s surface."
+            }
+          ]
+        },
+        {
+          "weekNumber": 10,
+          "title": "Week 10",
+          "questions": [
+            {
+              "id": "w10q1",
+              "type": "single_choice",
+              "question": "Minimum number of control points required for georeferencing in QGIS is __________.",
+              "options": [
+                "One",
+                "Two",
+                "Three",
+                "Four"
+              ],
+              "answer": [
+                "Three"
+              ],
+              "explanation": "At least three control points are required to accurately transform and align a raster image with real-world coordinates."
+            },
+            {
+              "id": "w10q2",
+              "type": "single_choice",
+              "question": "QGIS can be used to create which type of spatial features?",
+              "options": [
+                "Point",
+                "Line",
+                "Polygon",
+                "All of the above"
+              ],
+              "answer": [
+                "All of the above"
+              ],
+              "explanation": "QGIS supports the creation and editing of all major vector feature types including points, lines, and polygons."
+            },
+            {
+              "id": "w10q3",
+              "type": "single_choice",
+              "question": "The process of assigning real-world coordinates to a raster image is known as __________.",
+              "options": [
+                "Digitizing",
+                "Rectification",
+                "Georeferencing",
+                "Classification"
+              ],
+              "answer": [
+                "Georeferencing"
+              ],
+              "explanation": "Georeferencing links image pixels to actual geographic coordinates using control points."
+            },
+            {
+              "id": "w10q4",
+              "type": "single_choice",
+              "question": "CRS in GIS stands for __________.",
+              "options": [
+                "Coordinate Reference Selector",
+                "Coordinate Reference System",
+                "Coordinate Raster System",
+                "Coordinate Registration Symbol"
+              ],
+              "answer": [
+                "Coordinate Reference System"
+              ],
+              "explanation": "CRS defines how spatial data is projected and represented on the Earth’s surface."
+            },
+            {
+              "id": "w10q5",
+              "type": "single_choice",
+              "question": "Which statement about QGIS is correct?",
+              "options": [
+                "QGIS is proprietary software",
+                "QGIS is open-source and cross-platform",
+                "QGIS cannot process raster data",
+                "QGIS is paid software"
+              ],
+              "answer": [
+                "QGIS is open-source and cross-platform"
+              ],
+              "explanation": "QGIS is a free and open-source GIS platform that works on multiple operating systems."
+            },
+            {
+              "id": "w10q6",
+              "type": "single_choice",
+              "question": "Which option in QGIS is used to install additional tools and functionalities?",
+              "options": [
+                "Import",
+                "Export",
+                "Plugins",
+                "Layout Manager"
+              ],
+              "answer": [
+                "Plugins"
+              ],
+              "explanation": "Plugins allow users to extend QGIS capabilities with additional analysis and visualization tools."
+            },
+            {
+              "id": "w10q7",
+              "type": "single_choice",
+              "question": "Which file format is most commonly used for raster datasets in GIS?",
+              "options": [
+                "JPEG",
+                "PNG",
+                "GeoTIFF",
+                "CSV"
+              ],
+              "answer": [
+                "GeoTIFF"
+              ],
+              "explanation": "GeoTIFF stores raster images along with geographic referencing information."
+            },
+            {
+              "id": "w10q8",
+              "type": "single_choice",
+              "question": "A toposheet with scale 1:25,000 contains __________ detail compared to a 1:50,000 map.",
+              "options": [
+                "Less",
+                "Equal",
+                "More",
+                "No"
+              ],
+              "answer": [
+                "More"
+              ],
+              "explanation": "Larger-scale maps such as 1:25,000 show more detailed geographic information than smaller-scale maps."
+            },
+            {
+              "id": "w10q9",
+              "type": "single_choice",
+              "question": "In QGIS field calculator, area values are converted from square meters to hectares by dividing by __________.",
+              "options": [
+                "1000",
+                "5000",
+                "10000",
+                "25000"
+              ],
+              "answer": [
+                "10000"
+              ],
+              "explanation": "One hectare equals 10,000 square meters, so area values are divided by 10,000."
+            },
+            {
+              "id": "w10q10",
+              "type": "single_choice",
+              "question": "OpenStreetMap plugin in QGIS is mainly used for __________.",
+              "options": [
+                "Database encryption",
+                "Raster interpolation",
+                "Base map and spatial data download",
+                "Georeferencing only"
+              ],
+              "answer": [
+                "Base map and spatial data download"
+              ],
+              "explanation": "OpenStreetMap plugin provides base maps and allows downloading spatial information for GIS analysis."
+            }
+          ]
+        },
+        {
+          "weekNumber": 11,
+          "title": "Week 11",
+          "questions": [
+            {
+              "id": "w11q1",
+              "type": "single_choice",
+              "question": "Which command is used to load a package in R?",
+              "options": [
+                "import(raster)",
+                "library(raster)",
+                "load(raster)",
+                "package(raster)"
+              ],
+              "answer": [
+                "library(raster)"
+              ],
+              "explanation": "The library () function is used in R to load installed packages into the current session."
+            },
+            {
+              "id": "w11q2",
+              "type": "single_choice",
+              "question": "Which function is used to create a dataframe in R?",
+              "options": [
+                "dataframe()",
+                "create.frame()",
+                "data.frame()",
+                "make.table()"
+              ],
+              "answer": [
+                "data.frame()"
+              ],
+              "explanation": "data.frame() is the standard function in R for creating tabular datasets."
+            },
+            {
+              "id": "w11q3",
+              "type": "single_choice",
+              "question": "Which function is commonly used to display False Colour Composite (FCC) images in R?",
+              "options": [
+                "plotFCC()",
+                "plotRGB()",
+                "fccPlot()",
+                "rasterRGB()"
+              ],
+              "answer": [
+                "plotRGB()"
+              ],
+              "explanation": "plotRGB() is used for plotting multi-band raster images as FCC or true-color composites."
+            },
+            {
+              "id": "w11q4",
+              "type": "single_choice",
+              "question": "The cellStats() function in R is mainly used to calculate __________.",
+              "options": [
+                "Raster projection",
+                "Raster statistics",
+                "Vector topology",
+                "Attribute joins"
+              ],
+              "answer": [
+                "Raster statistics"
+              ],
+              "explanation": "cellStats() computes raster statistics such as minimum, maximum, mean, and standard deviation."
+            },
+            {
+              "id": "w11q5",
+              "type": "single_choice",
+              "question": "Data created in Google Earth can be imported into QGIS using which format?",
+              "options": [
+                "TIFF",
+                "JPEG",
+                "KML",
+                "PNG"
+              ],
+              "answer": [
+                "KML"
+              ],
+              "explanation": "KML is the standard format used for transferring spatial data from Google Earth into GIS software."
+            },
+            {
+              "id": "w11q6",
+              "type": "single_choice",
+              "question": "Which dataset is freely available in the Indian Space Research Organisation Bhuvan Geoportal?",
+              "options": [
+                "QuickBird",
+                "IKONOS",
+                "LISS III",
+                "WorldView"
+              ],
+              "answer": [
+                "LISS III"
+              ],
+              "explanation": "LISS III satellite imagery is freely accessible through the Bhuvan Geoportal."
+            },
+            {
+              "id": "w11q7",
+              "type": "single_choice",
+              "question": "Which interpolation method uses 16 neighboring pixels?",
+              "options": [
+                "Bilinear interpolation",
+                "Nearest neighbour",
+                "Bicubic interpolation",
+                "Linear interpolation"
+              ],
+              "answer": [
+                "Bicubic interpolation"
+              ],
+              "explanation": "Bicubic interpolation uses the nearest 16 pixels to create smoother resampled images."
+            },
+            {
+              "id": "w11q8",
+              "type": "single_choice",
+              "question": "The process of assigning real-world coordinates to a raster image is called __________.",
+              "options": [
+                "Vectorization",
+                "Classification",
+                "Georeferencing",
+                "Rasterization"
+              ],
+              "answer": [
+                "Georeferencing"
+              ],
+              "explanation": "Georeferencing links raster images with actual geographic coordinates on Earth."
+            },
+            {
+              "id": "w11q9",
+              "type": "single_choice",
+              "question": "Which GIS operation creates zones around spatial features?",
+              "options": [
+                "Overlay",
+                "Buffer",
+                "Classification",
+                "Interpolation"
+              ],
+              "answer": [
+                "Buffer"
+              ],
+              "explanation": "Buffering creates polygon zones at specified distances around spatial features."
+            },
+            {
+              "id": "w11q10",
+              "type": "single_choice",
+              "question": "Which GIS software is free and open-source?",
+              "options": [
+                "ArcGIS",
+                "ENVI",
+                "ERDAS Imagine",
+                "QGIS"
+              ],
+              "answer": [
+                "QGIS"
+              ],
+              "explanation": "QGIS is an open-source GIS software used for mapping and spatial analysis."
+            }
+          ]
+        }
+      ]
     }
   ]
 }
