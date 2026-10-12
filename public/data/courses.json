@@ -1,0 +1,1370 @@
+{
+  "courses": [
+    {
+      "id": "course-1",
+      "title": "Sample NPTEL Course",
+      "code": "NPTEL101",
+      "weeks": [
+        {
+          "weekNumber": 0,
+          "title": "Week 0 (Prerequisites)",
+          "questions": [
+            {
+              "id": "w0q1",
+              "type": "single_choice",
+              "question": "[Sample NPTEL Course | Week 0] Sample single-choice question 1: which option is correct?",
+              "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+              ],
+              "answer": [
+                "Option B"
+              ],
+              "explanation": "Option B is correct for Sample NPTEL Course Week 0 sample question 1. Replace this sample with your real question data."
+            },
+            {
+              "id": "w0q2",
+              "type": "multiple_choice",
+              "question": "[Sample NPTEL Course | Week 0] Sample multiple-choice question 2: select all correct options.",
+              "options": [
+                "Statement I",
+                "Statement II",
+                "Statement III",
+                "Statement IV"
+              ],
+              "answer": [
+                "Statement I",
+                "Statement III"
+              ],
+              "explanation": "Statements I and III are correct for Sample NPTEL Course Week 0 sample question 2. Replace this sample with your real question data."
+            },
+            {
+              "id": "w0q3",
+              "type": "single_choice",
+              "question": "[Sample NPTEL Course | Week 0] Sample single-choice question 3: what does this sample question test?",
+              "options": [
+                "Nothing — it is placeholder data",
+                "Only placeholders",
+                "Placeholder data again",
+                "All of the above"
+              ],
+              "answer": [
+                "All of the above"
+              ],
+              "explanation": "This is placeholder content for Sample NPTEL Course Week 0. Paste your real NPTEL questions into public/data/courses.json."
+            }
+          ]
+        },
+        {
+          "weekNumber": 1,
+          "title": "Week 1",
+          "questions": [
+            {
+              "id": "w1q1",
+              "type": "single_choice",
+              "question": "[Sample NPTEL Course | Week 1] Sample single-choice question 1: which option is correct?",
+              "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+              ],
+              "answer": [
+                "Option B"
+              ],
+              "explanation": "Option B is correct for Sample NPTEL Course Week 1 sample question 1. Replace this sample with your real question data."
+            },
+            {
+              "id": "w1q2",
+              "type": "multiple_choice",
+              "question": "[Sample NPTEL Course | Week 1] Sample multiple-choice question 2: select all correct options.",
+              "options": [
+                "Statement I",
+                "Statement II",
+                "Statement III",
+                "Statement IV"
+              ],
+              "answer": [
+                "Statement I",
+                "Statement III"
+              ],
+              "explanation": "Statements I and III are correct for Sample NPTEL Course Week 1 sample question 2. Replace this sample with your real question data."
+            },
+            {
+              "id": "w1q3",
+              "type": "single_choice",
+              "question": "[Sample NPTEL Course | Week 1] Sample single-choice question 3: what does this sample question test?",
+              "options": [
+                "Nothing — it is placeholder data",
+                "Only placeholders",
+                "Placeholder data again",
+                "All of the above"
+              ],
+              "answer": [
+                "All of the above"
+              ],
+              "explanation": "This is placeholder content for Sample NPTEL Course Week 1. Paste your real NPTEL questions into public/data/courses.json."
+            }
+          ]
+        },
+        {
+          "weekNumber": 2,
+          "title": "Week 2",
+          "questions": [
+            {
+              "id": "w2q1",
+              "type": "single_choice",
+              "question": "[Sample NPTEL Course | Week 2] Sample single-choice question 1: which option is correct?",
+              "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+              ],
+              "answer": [
+                "Option B"
+              ],
+              "explanation": "Option B is correct for Sample NPTEL Course Week 2 sample question 1. Replace this sample with your real question data."
+            },
+            {
+              "id": "w2q2",
+              "type": "multiple_choice",
+              "question": "[Sample NPTEL Course | Week 2] Sample multiple-choice question 2: select all correct options.",
+              "options": [
+                "Statement I",
+                "Statement II",
+                "Statement III",
+                "Statement IV"
+              ],
+              "answer": [
+                "Statement I",
+                "Statement III"
+              ],
+              "explanation": "Statements I and III are correct for Sample NPTEL Course Week 2 sample question 2. Replace this sample with your real question data."
+            },
+            {
+              "id": "w2q3",
+              "type": "single_choice",
+              "question": "[Sample NPTEL Course | Week 2] Sample single-choice question 3: what does this sample question test?",
+              "options": [
+                "Nothing — it is placeholder data",
+                "Only placeholders",
+                "Placeholder data again",
+                "All of the above"
+              ],
+              "answer": [
+                "All of the above"
+              ],
+              "explanation": "This is placeholder content for Sample NPTEL Course Week 2. Paste your real NPTEL questions into public/data/courses.json."
+            }
+          ]
+        },
+        {
+          "weekNumber": 3,
+          "title": "Week 3",
+          "questions": [
+            {
+              "id": "w3q1",
+              "type": "single_choice",
+              "question": "[Sample NPTEL Course | Week 3] Sample single-choice question 1: which option is correct?",
+              "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+              ],
+              "answer": [
+                "Option B"
+              ],
+              "explanation": "Option B is correct for Sample NPTEL Course Week 3 sample question 1. Replace this sample with your real question data."
+            },
+            {
+              "id": "w3q2",
+              "type": "multiple_choice",
+              "question": "[Sample NPTEL Course | Week 3] Sample multiple-choice question 2: select all correct options.",
+              "options": [
+                "Statement I",
+                "Statement II",
+                "Statement III",
+                "Statement IV"
+              ],
+              "answer": [
+                "Statement I",
+                "Statement III"
+              ],
+              "explanation": "Statements I and III are correct for Sample NPTEL Course Week 3 sample question 2. Replace this sample with your real question data."
+            },
+            {
+              "id": "w3q3",
+              "type": "single_choice",
+              "question": "[Sample NPTEL Course | Week 3] Sample single-choice question 3: what does this sample question test?",
+              "options": [
+                "Nothing — it is placeholder data",
+                "Only placeholders",
+                "Placeholder data again",
+                "All of the above"
+              ],
+              "answer": [
+                "All of the above"
+              ],
+              "explanation": "This is placeholder content for Sample NPTEL Course Week 3. Paste your real NPTEL questions into public/data/courses.json."
+            }
+          ]
+        },
+        {
+          "weekNumber": 4,
+          "title": "Week 4",
+          "questions": [
+            {
+              "id": "w4q1",
+              "type": "single_choice",
+              "question": "[Sample NPTEL Course | Week 4] Sample single-choice question 1: which option is correct?",
+              "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+              ],
+              "answer": [
+                "Option B"
+              ],
+              "explanation": "Option B is correct for Sample NPTEL Course Week 4 sample question 1. Replace this sample with your real question data."
+            },
+            {
+              "id": "w4q2",
+              "type": "multiple_choice",
+              "question": "[Sample NPTEL Course | Week 4] Sample multiple-choice question 2: select all correct options.",
+              "options": [
+                "Statement I",
+                "Statement II",
+                "Statement III",
+                "Statement IV"
+              ],
+              "answer": [
+                "Statement I",
+                "Statement III"
+              ],
+              "explanation": "Statements I and III are correct for Sample NPTEL Course Week 4 sample question 2. Replace this sample with your real question data."
+            },
+            {
+              "id": "w4q3",
+              "type": "single_choice",
+              "question": "[Sample NPTEL Course | Week 4] Sample single-choice question 3: what does this sample question test?",
+              "options": [
+                "Nothing — it is placeholder data",
+                "Only placeholders",
+                "Placeholder data again",
+                "All of the above"
+              ],
+              "answer": [
+                "All of the above"
+              ],
+              "explanation": "This is placeholder content for Sample NPTEL Course Week 4. Paste your real NPTEL questions into public/data/courses.json."
+            }
+          ]
+        },
+        {
+          "weekNumber": 5,
+          "title": "Week 5",
+          "questions": [
+            {
+              "id": "w5q1",
+              "type": "single_choice",
+              "question": "[Sample NPTEL Course | Week 5] Sample single-choice question 1: which option is correct?",
+              "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+              ],
+              "answer": [
+                "Option B"
+              ],
+              "explanation": "Option B is correct for Sample NPTEL Course Week 5 sample question 1. Replace this sample with your real question data."
+            },
+            {
+              "id": "w5q2",
+              "type": "multiple_choice",
+              "question": "[Sample NPTEL Course | Week 5] Sample multiple-choice question 2: select all correct options.",
+              "options": [
+                "Statement I",
+                "Statement II",
+                "Statement III",
+                "Statement IV"
+              ],
+              "answer": [
+                "Statement I",
+                "Statement III"
+              ],
+              "explanation": "Statements I and III are correct for Sample NPTEL Course Week 5 sample question 2. Replace this sample with your real question data."
+            },
+            {
+              "id": "w5q3",
+              "type": "single_choice",
+              "question": "[Sample NPTEL Course | Week 5] Sample single-choice question 3: what does this sample question test?",
+              "options": [
+                "Nothing — it is placeholder data",
+                "Only placeholders",
+                "Placeholder data again",
+                "All of the above"
+              ],
+              "answer": [
+                "All of the above"
+              ],
+              "explanation": "This is placeholder content for Sample NPTEL Course Week 5. Paste your real NPTEL questions into public/data/courses.json."
+            }
+          ]
+        },
+        {
+          "weekNumber": 6,
+          "title": "Week 6",
+          "questions": [
+            {
+              "id": "w6q1",
+              "type": "single_choice",
+              "question": "[Sample NPTEL Course | Week 6] Sample single-choice question 1: which option is correct?",
+              "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+              ],
+              "answer": [
+                "Option B"
+              ],
+              "explanation": "Option B is correct for Sample NPTEL Course Week 6 sample question 1. Replace this sample with your real question data."
+            },
+            {
+              "id": "w6q2",
+              "type": "multiple_choice",
+              "question": "[Sample NPTEL Course | Week 6] Sample multiple-choice question 2: select all correct options.",
+              "options": [
+                "Statement I",
+                "Statement II",
+                "Statement III",
+                "Statement IV"
+              ],
+              "answer": [
+                "Statement I",
+                "Statement III"
+              ],
+              "explanation": "Statements I and III are correct for Sample NPTEL Course Week 6 sample question 2. Replace this sample with your real question data."
+            },
+            {
+              "id": "w6q3",
+              "type": "single_choice",
+              "question": "[Sample NPTEL Course | Week 6] Sample single-choice question 3: what does this sample question test?",
+              "options": [
+                "Nothing — it is placeholder data",
+                "Only placeholders",
+                "Placeholder data again",
+                "All of the above"
+              ],
+              "answer": [
+                "All of the above"
+              ],
+              "explanation": "This is placeholder content for Sample NPTEL Course Week 6. Paste your real NPTEL questions into public/data/courses.json."
+            }
+          ]
+        },
+        {
+          "weekNumber": 7,
+          "title": "Week 7",
+          "questions": [
+            {
+              "id": "w7q1",
+              "type": "single_choice",
+              "question": "[Sample NPTEL Course | Week 7] Sample single-choice question 1: which option is correct?",
+              "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+              ],
+              "answer": [
+                "Option B"
+              ],
+              "explanation": "Option B is correct for Sample NPTEL Course Week 7 sample question 1. Replace this sample with your real question data."
+            },
+            {
+              "id": "w7q2",
+              "type": "multiple_choice",
+              "question": "[Sample NPTEL Course | Week 7] Sample multiple-choice question 2: select all correct options.",
+              "options": [
+                "Statement I",
+                "Statement II",
+                "Statement III",
+                "Statement IV"
+              ],
+              "answer": [
+                "Statement I",
+                "Statement III"
+              ],
+              "explanation": "Statements I and III are correct for Sample NPTEL Course Week 7 sample question 2. Replace this sample with your real question data."
+            },
+            {
+              "id": "w7q3",
+              "type": "single_choice",
+              "question": "[Sample NPTEL Course | Week 7] Sample single-choice question 3: what does this sample question test?",
+              "options": [
+                "Nothing — it is placeholder data",
+                "Only placeholders",
+                "Placeholder data again",
+                "All of the above"
+              ],
+              "answer": [
+                "All of the above"
+              ],
+              "explanation": "This is placeholder content for Sample NPTEL Course Week 7. Paste your real NPTEL questions into public/data/courses.json."
+            }
+          ]
+        },
+        {
+          "weekNumber": 8,
+          "title": "Week 8",
+          "questions": [
+            {
+              "id": "w8q1",
+              "type": "single_choice",
+              "question": "[Sample NPTEL Course | Week 8] Sample single-choice question 1: which option is correct?",
+              "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+              ],
+              "answer": [
+                "Option B"
+              ],
+              "explanation": "Option B is correct for Sample NPTEL Course Week 8 sample question 1. Replace this sample with your real question data."
+            },
+            {
+              "id": "w8q2",
+              "type": "multiple_choice",
+              "question": "[Sample NPTEL Course | Week 8] Sample multiple-choice question 2: select all correct options.",
+              "options": [
+                "Statement I",
+                "Statement II",
+                "Statement III",
+                "Statement IV"
+              ],
+              "answer": [
+                "Statement I",
+                "Statement III"
+              ],
+              "explanation": "Statements I and III are correct for Sample NPTEL Course Week 8 sample question 2. Replace this sample with your real question data."
+            },
+            {
+              "id": "w8q3",
+              "type": "single_choice",
+              "question": "[Sample NPTEL Course | Week 8] Sample single-choice question 3: what does this sample question test?",
+              "options": [
+                "Nothing — it is placeholder data",
+                "Only placeholders",
+                "Placeholder data again",
+                "All of the above"
+              ],
+              "answer": [
+                "All of the above"
+              ],
+              "explanation": "This is placeholder content for Sample NPTEL Course Week 8. Paste your real NPTEL questions into public/data/courses.json."
+            }
+          ]
+        },
+        {
+          "weekNumber": 9,
+          "title": "Week 9",
+          "questions": [
+            {
+              "id": "w9q1",
+              "type": "single_choice",
+              "question": "[Sample NPTEL Course | Week 9] Sample single-choice question 1: which option is correct?",
+              "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+              ],
+              "answer": [
+                "Option B"
+              ],
+              "explanation": "Option B is correct for Sample NPTEL Course Week 9 sample question 1. Replace this sample with your real question data."
+            },
+            {
+              "id": "w9q2",
+              "type": "multiple_choice",
+              "question": "[Sample NPTEL Course | Week 9] Sample multiple-choice question 2: select all correct options.",
+              "options": [
+                "Statement I",
+                "Statement II",
+                "Statement III",
+                "Statement IV"
+              ],
+              "answer": [
+                "Statement I",
+                "Statement III"
+              ],
+              "explanation": "Statements I and III are correct for Sample NPTEL Course Week 9 sample question 2. Replace this sample with your real question data."
+            },
+            {
+              "id": "w9q3",
+              "type": "single_choice",
+              "question": "[Sample NPTEL Course | Week 9] Sample single-choice question 3: what does this sample question test?",
+              "options": [
+                "Nothing — it is placeholder data",
+                "Only placeholders",
+                "Placeholder data again",
+                "All of the above"
+              ],
+              "answer": [
+                "All of the above"
+              ],
+              "explanation": "This is placeholder content for Sample NPTEL Course Week 9. Paste your real NPTEL questions into public/data/courses.json."
+            }
+          ]
+        },
+        {
+          "weekNumber": 10,
+          "title": "Week 10",
+          "questions": [
+            {
+              "id": "w10q1",
+              "type": "single_choice",
+              "question": "[Sample NPTEL Course | Week 10] Sample single-choice question 1: which option is correct?",
+              "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+              ],
+              "answer": [
+                "Option B"
+              ],
+              "explanation": "Option B is correct for Sample NPTEL Course Week 10 sample question 1. Replace this sample with your real question data."
+            },
+            {
+              "id": "w10q2",
+              "type": "multiple_choice",
+              "question": "[Sample NPTEL Course | Week 10] Sample multiple-choice question 2: select all correct options.",
+              "options": [
+                "Statement I",
+                "Statement II",
+                "Statement III",
+                "Statement IV"
+              ],
+              "answer": [
+                "Statement I",
+                "Statement III"
+              ],
+              "explanation": "Statements I and III are correct for Sample NPTEL Course Week 10 sample question 2. Replace this sample with your real question data."
+            },
+            {
+              "id": "w10q3",
+              "type": "single_choice",
+              "question": "[Sample NPTEL Course | Week 10] Sample single-choice question 3: what does this sample question test?",
+              "options": [
+                "Nothing — it is placeholder data",
+                "Only placeholders",
+                "Placeholder data again",
+                "All of the above"
+              ],
+              "answer": [
+                "All of the above"
+              ],
+              "explanation": "This is placeholder content for Sample NPTEL Course Week 10. Paste your real NPTEL questions into public/data/courses.json."
+            }
+          ]
+        },
+        {
+          "weekNumber": 11,
+          "title": "Week 11",
+          "questions": [
+            {
+              "id": "w11q1",
+              "type": "single_choice",
+              "question": "[Sample NPTEL Course | Week 11] Sample single-choice question 1: which option is correct?",
+              "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+              ],
+              "answer": [
+                "Option B"
+              ],
+              "explanation": "Option B is correct for Sample NPTEL Course Week 11 sample question 1. Replace this sample with your real question data."
+            },
+            {
+              "id": "w11q2",
+              "type": "multiple_choice",
+              "question": "[Sample NPTEL Course | Week 11] Sample multiple-choice question 2: select all correct options.",
+              "options": [
+                "Statement I",
+                "Statement II",
+                "Statement III",
+                "Statement IV"
+              ],
+              "answer": [
+                "Statement I",
+                "Statement III"
+              ],
+              "explanation": "Statements I and III are correct for Sample NPTEL Course Week 11 sample question 2. Replace this sample with your real question data."
+            },
+            {
+              "id": "w11q3",
+              "type": "single_choice",
+              "question": "[Sample NPTEL Course | Week 11] Sample single-choice question 3: what does this sample question test?",
+              "options": [
+                "Nothing — it is placeholder data",
+                "Only placeholders",
+                "Placeholder data again",
+                "All of the above"
+              ],
+              "answer": [
+                "All of the above"
+              ],
+              "explanation": "This is placeholder content for Sample NPTEL Course Week 11. Paste your real NPTEL questions into public/data/courses.json."
+            }
+          ]
+        },
+        {
+          "weekNumber": 12,
+          "title": "Week 12",
+          "questions": [
+            {
+              "id": "w12q1",
+              "type": "single_choice",
+              "question": "[Sample NPTEL Course | Week 12] Sample single-choice question 1: which option is correct?",
+              "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+              ],
+              "answer": [
+                "Option B"
+              ],
+              "explanation": "Option B is correct for Sample NPTEL Course Week 12 sample question 1. Replace this sample with your real question data."
+            },
+            {
+              "id": "w12q2",
+              "type": "multiple_choice",
+              "question": "[Sample NPTEL Course | Week 12] Sample multiple-choice question 2: select all correct options.",
+              "options": [
+                "Statement I",
+                "Statement II",
+                "Statement III",
+                "Statement IV"
+              ],
+              "answer": [
+                "Statement I",
+                "Statement III"
+              ],
+              "explanation": "Statements I and III are correct for Sample NPTEL Course Week 12 sample question 2. Replace this sample with your real question data."
+            },
+            {
+              "id": "w12q3",
+              "type": "single_choice",
+              "question": "[Sample NPTEL Course | Week 12] Sample single-choice question 3: what does this sample question test?",
+              "options": [
+                "Nothing — it is placeholder data",
+                "Only placeholders",
+                "Placeholder data again",
+                "All of the above"
+              ],
+              "answer": [
+                "All of the above"
+              ],
+              "explanation": "This is placeholder content for Sample NPTEL Course Week 12. Paste your real NPTEL questions into public/data/courses.json."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "course-2",
+      "title": "Sample NPTEL Course 2",
+      "code": "NPTEL102",
+      "weeks": [
+        {
+          "weekNumber": 0,
+          "title": "Week 0 (Prerequisites)",
+          "questions": [
+            {
+              "id": "w0q1",
+              "type": "single_choice",
+              "question": "[Sample NPTEL Course 2 | Week 0] Sample single-choice question 1: which option is correct?",
+              "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+              ],
+              "answer": [
+                "Option B"
+              ],
+              "explanation": "Option B is correct for Sample NPTEL Course 2 Week 0 sample question 1. Replace this sample with your real question data."
+            },
+            {
+              "id": "w0q2",
+              "type": "multiple_choice",
+              "question": "[Sample NPTEL Course 2 | Week 0] Sample multiple-choice question 2: select all correct options.",
+              "options": [
+                "Statement I",
+                "Statement II",
+                "Statement III",
+                "Statement IV"
+              ],
+              "answer": [
+                "Statement I",
+                "Statement III"
+              ],
+              "explanation": "Statements I and III are correct for Sample NPTEL Course 2 Week 0 sample question 2. Replace this sample with your real question data."
+            },
+            {
+              "id": "w0q3",
+              "type": "single_choice",
+              "question": "[Sample NPTEL Course 2 | Week 0] Sample single-choice question 3: what does this sample question test?",
+              "options": [
+                "Nothing — it is placeholder data",
+                "Only placeholders",
+                "Placeholder data again",
+                "All of the above"
+              ],
+              "answer": [
+                "All of the above"
+              ],
+              "explanation": "This is placeholder content for Sample NPTEL Course 2 Week 0. Paste your real NPTEL questions into public/data/courses.json."
+            }
+          ]
+        },
+        {
+          "weekNumber": 1,
+          "title": "Week 1",
+          "questions": [
+            {
+              "id": "w1q1",
+              "type": "single_choice",
+              "question": "[Sample NPTEL Course 2 | Week 1] Sample single-choice question 1: which option is correct?",
+              "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+              ],
+              "answer": [
+                "Option B"
+              ],
+              "explanation": "Option B is correct for Sample NPTEL Course 2 Week 1 sample question 1. Replace this sample with your real question data."
+            },
+            {
+              "id": "w1q2",
+              "type": "multiple_choice",
+              "question": "[Sample NPTEL Course 2 | Week 1] Sample multiple-choice question 2: select all correct options.",
+              "options": [
+                "Statement I",
+                "Statement II",
+                "Statement III",
+                "Statement IV"
+              ],
+              "answer": [
+                "Statement I",
+                "Statement III"
+              ],
+              "explanation": "Statements I and III are correct for Sample NPTEL Course 2 Week 1 sample question 2. Replace this sample with your real question data."
+            },
+            {
+              "id": "w1q3",
+              "type": "single_choice",
+              "question": "[Sample NPTEL Course 2 | Week 1] Sample single-choice question 3: what does this sample question test?",
+              "options": [
+                "Nothing — it is placeholder data",
+                "Only placeholders",
+                "Placeholder data again",
+                "All of the above"
+              ],
+              "answer": [
+                "All of the above"
+              ],
+              "explanation": "This is placeholder content for Sample NPTEL Course 2 Week 1. Paste your real NPTEL questions into public/data/courses.json."
+            }
+          ]
+        },
+        {
+          "weekNumber": 2,
+          "title": "Week 2",
+          "questions": [
+            {
+              "id": "w2q1",
+              "type": "single_choice",
+              "question": "[Sample NPTEL Course 2 | Week 2] Sample single-choice question 1: which option is correct?",
+              "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+              ],
+              "answer": [
+                "Option B"
+              ],
+              "explanation": "Option B is correct for Sample NPTEL Course 2 Week 2 sample question 1. Replace this sample with your real question data."
+            },
+            {
+              "id": "w2q2",
+              "type": "multiple_choice",
+              "question": "[Sample NPTEL Course 2 | Week 2] Sample multiple-choice question 2: select all correct options.",
+              "options": [
+                "Statement I",
+                "Statement II",
+                "Statement III",
+                "Statement IV"
+              ],
+              "answer": [
+                "Statement I",
+                "Statement III"
+              ],
+              "explanation": "Statements I and III are correct for Sample NPTEL Course 2 Week 2 sample question 2. Replace this sample with your real question data."
+            },
+            {
+              "id": "w2q3",
+              "type": "single_choice",
+              "question": "[Sample NPTEL Course 2 | Week 2] Sample single-choice question 3: what does this sample question test?",
+              "options": [
+                "Nothing — it is placeholder data",
+                "Only placeholders",
+                "Placeholder data again",
+                "All of the above"
+              ],
+              "answer": [
+                "All of the above"
+              ],
+              "explanation": "This is placeholder content for Sample NPTEL Course 2 Week 2. Paste your real NPTEL questions into public/data/courses.json."
+            }
+          ]
+        },
+        {
+          "weekNumber": 3,
+          "title": "Week 3",
+          "questions": [
+            {
+              "id": "w3q1",
+              "type": "single_choice",
+              "question": "[Sample NPTEL Course 2 | Week 3] Sample single-choice question 1: which option is correct?",
+              "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+              ],
+              "answer": [
+                "Option B"
+              ],
+              "explanation": "Option B is correct for Sample NPTEL Course 2 Week 3 sample question 1. Replace this sample with your real question data."
+            },
+            {
+              "id": "w3q2",
+              "type": "multiple_choice",
+              "question": "[Sample NPTEL Course 2 | Week 3] Sample multiple-choice question 2: select all correct options.",
+              "options": [
+                "Statement I",
+                "Statement II",
+                "Statement III",
+                "Statement IV"
+              ],
+              "answer": [
+                "Statement I",
+                "Statement III"
+              ],
+              "explanation": "Statements I and III are correct for Sample NPTEL Course 2 Week 3 sample question 2. Replace this sample with your real question data."
+            },
+            {
+              "id": "w3q3",
+              "type": "single_choice",
+              "question": "[Sample NPTEL Course 2 | Week 3] Sample single-choice question 3: what does this sample question test?",
+              "options": [
+                "Nothing — it is placeholder data",
+                "Only placeholders",
+                "Placeholder data again",
+                "All of the above"
+              ],
+              "answer": [
+                "All of the above"
+              ],
+              "explanation": "This is placeholder content for Sample NPTEL Course 2 Week 3. Paste your real NPTEL questions into public/data/courses.json."
+            }
+          ]
+        },
+        {
+          "weekNumber": 4,
+          "title": "Week 4",
+          "questions": [
+            {
+              "id": "w4q1",
+              "type": "single_choice",
+              "question": "[Sample NPTEL Course 2 | Week 4] Sample single-choice question 1: which option is correct?",
+              "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+              ],
+              "answer": [
+                "Option B"
+              ],
+              "explanation": "Option B is correct for Sample NPTEL Course 2 Week 4 sample question 1. Replace this sample with your real question data."
+            },
+            {
+              "id": "w4q2",
+              "type": "multiple_choice",
+              "question": "[Sample NPTEL Course 2 | Week 4] Sample multiple-choice question 2: select all correct options.",
+              "options": [
+                "Statement I",
+                "Statement II",
+                "Statement III",
+                "Statement IV"
+              ],
+              "answer": [
+                "Statement I",
+                "Statement III"
+              ],
+              "explanation": "Statements I and III are correct for Sample NPTEL Course 2 Week 4 sample question 2. Replace this sample with your real question data."
+            },
+            {
+              "id": "w4q3",
+              "type": "single_choice",
+              "question": "[Sample NPTEL Course 2 | Week 4] Sample single-choice question 3: what does this sample question test?",
+              "options": [
+                "Nothing — it is placeholder data",
+                "Only placeholders",
+                "Placeholder data again",
+                "All of the above"
+              ],
+              "answer": [
+                "All of the above"
+              ],
+              "explanation": "This is placeholder content for Sample NPTEL Course 2 Week 4. Paste your real NPTEL questions into public/data/courses.json."
+            }
+          ]
+        },
+        {
+          "weekNumber": 5,
+          "title": "Week 5",
+          "questions": [
+            {
+              "id": "w5q1",
+              "type": "single_choice",
+              "question": "[Sample NPTEL Course 2 | Week 5] Sample single-choice question 1: which option is correct?",
+              "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+              ],
+              "answer": [
+                "Option B"
+              ],
+              "explanation": "Option B is correct for Sample NPTEL Course 2 Week 5 sample question 1. Replace this sample with your real question data."
+            },
+            {
+              "id": "w5q2",
+              "type": "multiple_choice",
+              "question": "[Sample NPTEL Course 2 | Week 5] Sample multiple-choice question 2: select all correct options.",
+              "options": [
+                "Statement I",
+                "Statement II",
+                "Statement III",
+                "Statement IV"
+              ],
+              "answer": [
+                "Statement I",
+                "Statement III"
+              ],
+              "explanation": "Statements I and III are correct for Sample NPTEL Course 2 Week 5 sample question 2. Replace this sample with your real question data."
+            },
+            {
+              "id": "w5q3",
+              "type": "single_choice",
+              "question": "[Sample NPTEL Course 2 | Week 5] Sample single-choice question 3: what does this sample question test?",
+              "options": [
+                "Nothing — it is placeholder data",
+                "Only placeholders",
+                "Placeholder data again",
+                "All of the above"
+              ],
+              "answer": [
+                "All of the above"
+              ],
+              "explanation": "This is placeholder content for Sample NPTEL Course 2 Week 5. Paste your real NPTEL questions into public/data/courses.json."
+            }
+          ]
+        },
+        {
+          "weekNumber": 6,
+          "title": "Week 6",
+          "questions": [
+            {
+              "id": "w6q1",
+              "type": "single_choice",
+              "question": "[Sample NPTEL Course 2 | Week 6] Sample single-choice question 1: which option is correct?",
+              "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+              ],
+              "answer": [
+                "Option B"
+              ],
+              "explanation": "Option B is correct for Sample NPTEL Course 2 Week 6 sample question 1. Replace this sample with your real question data."
+            },
+            {
+              "id": "w6q2",
+              "type": "multiple_choice",
+              "question": "[Sample NPTEL Course 2 | Week 6] Sample multiple-choice question 2: select all correct options.",
+              "options": [
+                "Statement I",
+                "Statement II",
+                "Statement III",
+                "Statement IV"
+              ],
+              "answer": [
+                "Statement I",
+                "Statement III"
+              ],
+              "explanation": "Statements I and III are correct for Sample NPTEL Course 2 Week 6 sample question 2. Replace this sample with your real question data."
+            },
+            {
+              "id": "w6q3",
+              "type": "single_choice",
+              "question": "[Sample NPTEL Course 2 | Week 6] Sample single-choice question 3: what does this sample question test?",
+              "options": [
+                "Nothing — it is placeholder data",
+                "Only placeholders",
+                "Placeholder data again",
+                "All of the above"
+              ],
+              "answer": [
+                "All of the above"
+              ],
+              "explanation": "This is placeholder content for Sample NPTEL Course 2 Week 6. Paste your real NPTEL questions into public/data/courses.json."
+            }
+          ]
+        },
+        {
+          "weekNumber": 7,
+          "title": "Week 7",
+          "questions": [
+            {
+              "id": "w7q1",
+              "type": "single_choice",
+              "question": "[Sample NPTEL Course 2 | Week 7] Sample single-choice question 1: which option is correct?",
+              "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+              ],
+              "answer": [
+                "Option B"
+              ],
+              "explanation": "Option B is correct for Sample NPTEL Course 2 Week 7 sample question 1. Replace this sample with your real question data."
+            },
+            {
+              "id": "w7q2",
+              "type": "multiple_choice",
+              "question": "[Sample NPTEL Course 2 | Week 7] Sample multiple-choice question 2: select all correct options.",
+              "options": [
+                "Statement I",
+                "Statement II",
+                "Statement III",
+                "Statement IV"
+              ],
+              "answer": [
+                "Statement I",
+                "Statement III"
+              ],
+              "explanation": "Statements I and III are correct for Sample NPTEL Course 2 Week 7 sample question 2. Replace this sample with your real question data."
+            },
+            {
+              "id": "w7q3",
+              "type": "single_choice",
+              "question": "[Sample NPTEL Course 2 | Week 7] Sample single-choice question 3: what does this sample question test?",
+              "options": [
+                "Nothing — it is placeholder data",
+                "Only placeholders",
+                "Placeholder data again",
+                "All of the above"
+              ],
+              "answer": [
+                "All of the above"
+              ],
+              "explanation": "This is placeholder content for Sample NPTEL Course 2 Week 7. Paste your real NPTEL questions into public/data/courses.json."
+            }
+          ]
+        },
+        {
+          "weekNumber": 8,
+          "title": "Week 8",
+          "questions": [
+            {
+              "id": "w8q1",
+              "type": "single_choice",
+              "question": "[Sample NPTEL Course 2 | Week 8] Sample single-choice question 1: which option is correct?",
+              "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+              ],
+              "answer": [
+                "Option B"
+              ],
+              "explanation": "Option B is correct for Sample NPTEL Course 2 Week 8 sample question 1. Replace this sample with your real question data."
+            },
+            {
+              "id": "w8q2",
+              "type": "multiple_choice",
+              "question": "[Sample NPTEL Course 2 | Week 8] Sample multiple-choice question 2: select all correct options.",
+              "options": [
+                "Statement I",
+                "Statement II",
+                "Statement III",
+                "Statement IV"
+              ],
+              "answer": [
+                "Statement I",
+                "Statement III"
+              ],
+              "explanation": "Statements I and III are correct for Sample NPTEL Course 2 Week 8 sample question 2. Replace this sample with your real question data."
+            },
+            {
+              "id": "w8q3",
+              "type": "single_choice",
+              "question": "[Sample NPTEL Course 2 | Week 8] Sample single-choice question 3: what does this sample question test?",
+              "options": [
+                "Nothing — it is placeholder data",
+                "Only placeholders",
+                "Placeholder data again",
+                "All of the above"
+              ],
+              "answer": [
+                "All of the above"
+              ],
+              "explanation": "This is placeholder content for Sample NPTEL Course 2 Week 8. Paste your real NPTEL questions into public/data/courses.json."
+            }
+          ]
+        },
+        {
+          "weekNumber": 9,
+          "title": "Week 9",
+          "questions": [
+            {
+              "id": "w9q1",
+              "type": "single_choice",
+              "question": "[Sample NPTEL Course 2 | Week 9] Sample single-choice question 1: which option is correct?",
+              "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+              ],
+              "answer": [
+                "Option B"
+              ],
+              "explanation": "Option B is correct for Sample NPTEL Course 2 Week 9 sample question 1. Replace this sample with your real question data."
+            },
+            {
+              "id": "w9q2",
+              "type": "multiple_choice",
+              "question": "[Sample NPTEL Course 2 | Week 9] Sample multiple-choice question 2: select all correct options.",
+              "options": [
+                "Statement I",
+                "Statement II",
+                "Statement III",
+                "Statement IV"
+              ],
+              "answer": [
+                "Statement I",
+                "Statement III"
+              ],
+              "explanation": "Statements I and III are correct for Sample NPTEL Course 2 Week 9 sample question 2. Replace this sample with your real question data."
+            },
+            {
+              "id": "w9q3",
+              "type": "single_choice",
+              "question": "[Sample NPTEL Course 2 | Week 9] Sample single-choice question 3: what does this sample question test?",
+              "options": [
+                "Nothing — it is placeholder data",
+                "Only placeholders",
+                "Placeholder data again",
+                "All of the above"
+              ],
+              "answer": [
+                "All of the above"
+              ],
+              "explanation": "This is placeholder content for Sample NPTEL Course 2 Week 9. Paste your real NPTEL questions into public/data/courses.json."
+            }
+          ]
+        },
+        {
+          "weekNumber": 10,
+          "title": "Week 10",
+          "questions": [
+            {
+              "id": "w10q1",
+              "type": "single_choice",
+              "question": "[Sample NPTEL Course 2 | Week 10] Sample single-choice question 1: which option is correct?",
+              "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+              ],
+              "answer": [
+                "Option B"
+              ],
+              "explanation": "Option B is correct for Sample NPTEL Course 2 Week 10 sample question 1. Replace this sample with your real question data."
+            },
+            {
+              "id": "w10q2",
+              "type": "multiple_choice",
+              "question": "[Sample NPTEL Course 2 | Week 10] Sample multiple-choice question 2: select all correct options.",
+              "options": [
+                "Statement I",
+                "Statement II",
+                "Statement III",
+                "Statement IV"
+              ],
+              "answer": [
+                "Statement I",
+                "Statement III"
+              ],
+              "explanation": "Statements I and III are correct for Sample NPTEL Course 2 Week 10 sample question 2. Replace this sample with your real question data."
+            },
+            {
+              "id": "w10q3",
+              "type": "single_choice",
+              "question": "[Sample NPTEL Course 2 | Week 10] Sample single-choice question 3: what does this sample question test?",
+              "options": [
+                "Nothing — it is placeholder data",
+                "Only placeholders",
+                "Placeholder data again",
+                "All of the above"
+              ],
+              "answer": [
+                "All of the above"
+              ],
+              "explanation": "This is placeholder content for Sample NPTEL Course 2 Week 10. Paste your real NPTEL questions into public/data/courses.json."
+            }
+          ]
+        },
+        {
+          "weekNumber": 11,
+          "title": "Week 11",
+          "questions": [
+            {
+              "id": "w11q1",
+              "type": "single_choice",
+              "question": "[Sample NPTEL Course 2 | Week 11] Sample single-choice question 1: which option is correct?",
+              "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+              ],
+              "answer": [
+                "Option B"
+              ],
+              "explanation": "Option B is correct for Sample NPTEL Course 2 Week 11 sample question 1. Replace this sample with your real question data."
+            },
+            {
+              "id": "w11q2",
+              "type": "multiple_choice",
+              "question": "[Sample NPTEL Course 2 | Week 11] Sample multiple-choice question 2: select all correct options.",
+              "options": [
+                "Statement I",
+                "Statement II",
+                "Statement III",
+                "Statement IV"
+              ],
+              "answer": [
+                "Statement I",
+                "Statement III"
+              ],
+              "explanation": "Statements I and III are correct for Sample NPTEL Course 2 Week 11 sample question 2. Replace this sample with your real question data."
+            },
+            {
+              "id": "w11q3",
+              "type": "single_choice",
+              "question": "[Sample NPTEL Course 2 | Week 11] Sample single-choice question 3: what does this sample question test?",
+              "options": [
+                "Nothing — it is placeholder data",
+                "Only placeholders",
+                "Placeholder data again",
+                "All of the above"
+              ],
+              "answer": [
+                "All of the above"
+              ],
+              "explanation": "This is placeholder content for Sample NPTEL Course 2 Week 11. Paste your real NPTEL questions into public/data/courses.json."
+            }
+          ]
+        },
+        {
+          "weekNumber": 12,
+          "title": "Week 12",
+          "questions": [
+            {
+              "id": "w12q1",
+              "type": "single_choice",
+              "question": "[Sample NPTEL Course 2 | Week 12] Sample single-choice question 1: which option is correct?",
+              "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+              ],
+              "answer": [
+                "Option B"
+              ],
+              "explanation": "Option B is correct for Sample NPTEL Course 2 Week 12 sample question 1. Replace this sample with your real question data."
+            },
+            {
+              "id": "w12q2",
+              "type": "multiple_choice",
+              "question": "[Sample NPTEL Course 2 | Week 12] Sample multiple-choice question 2: select all correct options.",
+              "options": [
+                "Statement I",
+                "Statement II",
+                "Statement III",
+                "Statement IV"
+              ],
+              "answer": [
+                "Statement I",
+                "Statement III"
+              ],
+              "explanation": "Statements I and III are correct for Sample NPTEL Course 2 Week 12 sample question 2. Replace this sample with your real question data."
+            },
+            {
+              "id": "w12q3",
+              "type": "single_choice",
+              "question": "[Sample NPTEL Course 2 | Week 12] Sample single-choice question 3: what does this sample question test?",
+              "options": [
+                "Nothing — it is placeholder data",
+                "Only placeholders",
+                "Placeholder data again",
+                "All of the above"
+              ],
+              "answer": [
+                "All of the above"
+              ],
+              "explanation": "This is placeholder content for Sample NPTEL Course 2 Week 12. Paste your real NPTEL questions into public/data/courses.json."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
