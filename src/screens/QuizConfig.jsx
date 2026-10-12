@@ -1,17 +1,33 @@
 import { useEffect, useMemo, useState } from 'react'
+import { navigate } from '../lib/router'
 
 const LIMITS = [10, 25, 50, 'all']
 
-export default function QuizConfig({ course, onBack, onStart }) {
-  const [selectedWeeks, setSelectedWeeks] = useState(new Set())
-  const [order, setOrder] = useState('sequential')
-  const [limit, setLimit] = useState('all')
-  const [mode, setMode] = useState('practice')
-  const [layout, setLayout] = useState(() => localStorage.getItem('quizLayout') || 'paged')
+// Store per-course config in sessionStorage so going back&forward between
+// screens restores the user's week/order/mode selections.
+function loadCfg(id) {
+  try {
+    return JSON.parse(sessionStorage.getItem(`cfg:${id}`) || '{}')
+  } catch {
+    return {}
+  }
+}
+
+export default function QuizConfig({ course, onStart }) {
+  const saved = useMemo(() => loadCfg(course.id), [course.id])
+  const [selectedWeeks, setSelectedWeeks] = useState(() => new Set(saved.weeks || []))
+  const [order, setOrder] = useState(() => saved.order || 'sequential')
+  const [limit, setLimit] = useState(() => saved.limit || 'all')
+  const [mode, setMode] = useState(() => saved.mode || 'practice')
+  const [layout, setLayout] = useState(() => saved.layout || localStorage.getItem('quizLayout') || 'paged')
 
   useEffect(() => {
     localStorage.setItem('quizLayout', layout)
-  }, [layout])
+    sessionStorage.setItem(
+      `cfg:${course.id}`,
+      JSON.stringify({ weeks: [...selectedWeeks], order, limit, mode, layout })
+    )
+  }, [course.id, selectedWeeks, order, limit, mode, layout])
 
   const poolSize = useMemo(
     () =>
@@ -50,7 +66,10 @@ export default function QuizConfig({ course, onBack, onStart }) {
 
   return (
     <div className="max-w-2xl mx-auto">
-      <button onClick={onBack} className="text-sm text-blue-600 dark:text-blue-400 mb-4">
+      <button
+        onClick={() => navigate({ screen: 'courses' })}
+        className="text-sm text-blue-600 dark:text-blue-400 mb-4"
+      >
         ← All courses
       </button>
       <h1 className="text-2xl font-bold">{course.title}</h1>
@@ -63,11 +82,11 @@ export default function QuizConfig({ course, onBack, onStart }) {
             onClick={toggleAll}
             className={`text-sm px-3 py-1 rounded-lg border ${
               allWeeks
-                ? 'bg-blue-600 text-white border-blue-600'
+                ? 'bg-slate-600 text-white border-slate-600 dark:bg-slate-700 dark:border-slate-700'
                 : 'border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800'
             }`}
           >
-            All Weeks ({weekMin}–{weekMax})
+            {allWeeks ? '✕ Clear all' : `All Weeks (${weekMin}–${weekMax})`}
           </button>
         </div>
         <div className="grid grid-cols-4 sm:grid-cols-7 gap-2">

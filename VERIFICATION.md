@@ -1314,3 +1314,37 @@ _Type: multiple_choice · Accepted: (pending)_
 
 ---
 
+
+---
+
+# Session: Geographic Information System course + SPA navigation fix (2026-10-13)
+
+## 1. GIS course ingested from solution PDFs
+
+- Source: `GeographicInformationSystem/Week_0_GIS.pdf` … `Week_11_GIS.pdf` (official NPTEL assignment solutions, IIT Kharagpur, Jul-2026).
+- Extraction: `pdfminer.six`; parser handles page footers, stray letters split by PDF layout, hyphenated wraps; 3 questions (W3 Q8, W5 Q2, W11 Q3) whose option text was rendered out-of-order in the PDF were transcribed manually from the PDF layout.
+- Result: new course `geographic-information-system`, **12 weeks (0–11), 120 questions**, every answer/every explanation exactly as printed in the PDF.
+- Independent cross-check: "Answer: (x)" sequences re-extracted from each raw PDF and compared to the parsed answer for all 120 questions — **0 mismatches**.
+- Data integrity: 120 unique ids, every answer is an existing option, all 4 options present, valid JSON.
+
+## 2. Practice mode corrected
+
+- Bug: Practice Mode auto-graded on every click, identical to Instant Test (spec: free navigation + on-demand checking).
+- Fix: selections are changeable in Practice Mode; grading happens on explicit "Check Answer"; options lock after grading. Multi-choice grading in Instant Test fixed (regression caught by the RM e2e).
+
+## 3. SPA navigation fix (single URL problem)
+
+- Problem: the whole app lived on one URL with in-memory screens — browser Back / mobile swipe-back exited to the browser homepage instead of walking through app screens.
+- Fix: hash-based router (`src/lib/router.js`):
+  - `#/` course list · `#/course/<id>` config · `#/quiz/<id>` quiz · `#/results/<id>` results
+  - Back/forward/swipe now walks config → quiz → results → home, and back into the exact quiz position (question index, answers, timer all live in the session, not component state).
+  - Config selections persist in `sessionStorage` per course, so back/forward restores week/order/mode picks.
+  - Deep links work; `#/quiz/<id>` without a live session redirects (replace, no history pollution); unknown course ids fall back to home; reload keeps the route.
+  - All-weeks toggle now shows explicit state (`All Weeks` / `✕ Clear all`).
+
+## 4. Test evidence (Playwright, Chrome, production build via vite preview)
+
+- `e2e-gis.mjs` — 26 checks: course listing, 12 week buttons, pool = 120, instant grading correct/incorrect + explanation, flag, navigator jump, live score, results summary, re-attempt incorrect (119), search filter, mock timer + submit, practice free-select/on-demand-lock/free-nav, mobile flow — **ALL PASSED, zero console/page errors**.
+- `e2e-nav.mjs` — 21 checks: per-screen URLs, back/forward through all screens, session+position restore, config restore, results↔quiz round trip, deep links (config/quiz), no-session redirect with `location.replace`, unknown id fallback, reload keeps route, mobile back-gesture walk (quiz → config → home) — **ALL PASSED, zero console/page errors**.
+- `e2e.mjs` (Research Methodology regression) — **ALL PASSED**, zero errors.
+- `npm run build` + `npm run lint` — clean.

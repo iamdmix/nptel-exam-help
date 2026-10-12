@@ -17,11 +17,22 @@ export default function Quiz({ session, setSession, onFinish }) {
   const scroll = session.layout === 'scroll'
   const autoGrade = mode === 'instant' // Instant Test grades on click; Practice grades on demand
   const showFeedback = mode !== 'mock'
-  const [current, setCurrent] = useState(0)
+  // current question index lives in the session so navigating away and back
+  // (browser back/forward, results review) restores the position
+  const current = Math.max(0, Math.min(questions.length - 1, session.currentIndex ?? 0))
+  const setCurrent = (i) =>
+    setSession((s) => ({
+      ...s,
+      currentIndex: Math.max(0, Math.min(questions.length - 1, typeof i === 'function' ? i(s.currentIndex ?? 0) : i)),
+    }))
   const cardRefs = useRef({})
   const timerState = useRef({})
 
-  const [elapsedSec, setElapsedSec] = useState(0)
+  // elapsed time derives from the session start so it stays accurate if the
+  // screen remounts (browser back/forward between quiz and other screens)
+  const [elapsedSec, setElapsedSec] = useState(() =>
+    Math.floor((Date.now() - session.startedAt) / 1000)
+  )
   useEffect(() => {
     const id = setInterval(() => setElapsedSec((t) => t + 1), 1000)
     return () => clearInterval(id)

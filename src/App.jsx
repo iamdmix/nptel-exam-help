@@ -1,6 +1,7 @@
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { loadCourses } from './lib/data'
 import { buildSession, gradeSession } from './lib/quiz'
+import { parseHash, navigate } from './lib/router'
 import CourseSelect from './screens/CourseSelect'
 import QuizConfig from './screens/QuizConfig'
 import Quiz from './screens/Quiz'
@@ -10,7 +11,7 @@ export default function App() {
   const [dark, setDark] = useState(() => localStorage.getItem('theme') === 'dark')
   const [courses, setCourses] = useState(null)
   const [error, setError] = useState(null)
-  const [view, setView] = useState({ screen: 'courses' })
+  const [route, setRoute] = useState(() => parseHash())
   const [session, setSession] = useState(null)
 
   useEffect(() => {
@@ -24,18 +25,63 @@ export default function App() {
       .catch((e) => setError(e.message))
   }, [])
 
-  const startQuiz = (course, cfg) => {
-    setSession(buildSession({ course, ...cfg }))
-    setView({ screen: 'quiz' })
-  }
+  // Keep route in sync with browser history (back/forward/swipe)
+  useEffect(() => {
+    const onHash = () => {
+      setRoute(parseHash())
+      window.scrollTo({ top: 0 })
+    }
+    window.addEventListener('hashchange', onHash)
+    return () => window.removeEventListener('hashchange', onHash)
+  }, [])
 
-  const finishQuiz = () => {
+  // Guard deep links without an in-memory session (e.g. page refresh mid-quiz).
+  // Always re-parse the LIVE location.hash so explicit user navigation that is
+  // racing this effect isn't hijacked (e.g. results -> home).
+  useEffect(() => {
+    if (!courses) return
+    const h = parseHash()
+    if (h.screen === 'courses' || !h.courseId) return
+    const course = courses.find((c) => c.id === h.courseId)
+    if (!course) {
+      window.location.replace('#/')
+      return
+    }
+    if (
+      (h.screen === 'quiz' && (!session || session.course.id !== h.courseId)) ||
+      (h.screen === 'results' && (!session?.report || session.course.id !== h.courseId))
+    ) {
+      window.location.replace(`#/course/${h.courseId}`)
+    }
+  }, [route, courses, session])
+
+  // Trigger the navigation to results once the report is attached to the session
+  useEffect(() => {
+    if (session?.justFinished && route.screen === 'quiz') {
+      navigate({ screen: 'results', courseId: session.course.id })
+    } else if (session?.justFinished && route.screen === 'results') {
+      setSession((s) => (s?.justFinished ? { ...s, justFinished: false } : s))
+    }
+  }, [session, route.screen])
+
+  const course =
+    courses && route.courseId ? courses.find((c) => c.id === route.courseId) : null
+
+  const startQuiz = useCallback((c, cfg) => {
+    setSession(buildSession({ course: c, ...cfg }))
+    navigate({ screen: 'quiz', courseId: c.id })
+  }, [])
+
+  const finishQuiz = useCallback(() => {
     setSession((s) => {
-      const report = { ...gradeSession(s), elapsedSec: Math.floor((Date.now() - s.startedAt) / 1000) }
-      setView({ screen: 'results' })
-      return { ...s, report }
+      if (!s || s.report) return s
+      const report = {
+        ...gradeSession(s),
+        elapsedSec: Math.floor((Date.now() - s.startedAt) / 1000),
+      }
+      return { ...s, report, justFinished: true }
     })
-  }
+  }, [])
 
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 transition-colors">
@@ -44,8 +90,7 @@ export default function App() {
           <button
             className="flex items-center gap-2 font-bold text-lg"
             onClick={() => {
-              setSession(null)
-              setView({ screen: 'courses' })
+              navigate({ screen: 'courses' })
             }}
           >
             <span className="text-xl">📘</span> NPTEL Exam Help
@@ -63,23 +108,19 @@ export default function App() {
       <main className="mx-auto max-w-5xl px-4 py-6 pb-24">
         {error && <p className="text-red-500">Error loading data: {error}</p>}
         {!courses && !error && <p className="text-slate-500">Loading courses…</p>}
-        {courses && view.screen === 'courses' && (
+        {courses && route.screen === 'courses' && (
           <CourseSelect
             courses={courses}
-            onSelect={(course) => setView({ screen: 'config', course })}
+            onSelect={(c) => navigate({ screen: 'config', courseId: c.id })}
           />
         )}
-        {courses && view.screen === 'config' && (
-          <QuizConfig
-            course={view.course}
-            onBack={() => setView({ screen: 'courses' })}
-            onStart={startQuiz}
-          />
+        {courses && route.screen === 'config' && course && (
+          <QuizConfig course={course} onStart={startQuiz} />
         )}
-        {view.screen === 'quiz' && session && (
+        {route.screen === 'quiz' && session && (
           <Quiz session={session} setSession={setSession} onFinish={finishQuiz} />
         )}
-        {view.screen === 'results' && session?.report && (
+        {route.screen === 'results' && session?.report && (
           <Results
             report={session.report}
             mode={session.mode}
@@ -98,12 +139,11 @@ export default function App() {
                   startedAt: Date.now(),
                   durationSec: null,
                 })
-                setView({ screen: 'quiz' })
+                navigate({ screen: 'quiz', courseId: session.course.id })
               }
             }}
             onHome={() => {
-              setSession(null)
-              setView({ screen: 'courses' })
+              navigate({ screen: 'courses' })
             }}
           />
         )}
