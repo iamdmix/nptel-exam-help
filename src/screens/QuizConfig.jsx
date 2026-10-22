@@ -20,14 +20,18 @@ export default function QuizConfig({ course, onStart }) {
   const [limit, setLimit] = useState(() => saved.limit || 'all')
   const [mode, setMode] = useState(() => saved.mode || 'practice')
   const [layout, setLayout] = useState(() => saved.layout || localStorage.getItem('quizLayout') || 'paged')
+  const [autoReveal, setAutoReveal] = useState(
+    () => saved.autoReveal ?? localStorage.getItem('quizAutoReveal') === '1'
+  )
 
   useEffect(() => {
     localStorage.setItem('quizLayout', layout)
+    localStorage.setItem('quizAutoReveal', autoReveal ? '1' : '0')
     sessionStorage.setItem(
       `cfg:${course.id}`,
-      JSON.stringify({ weeks: [...selectedWeeks], order, limit, mode, layout })
+      JSON.stringify({ weeks: [...selectedWeeks], order, limit, mode, layout, autoReveal })
     )
-  }, [course.id, selectedWeeks, order, limit, mode, layout])
+  }, [course.id, selectedWeeks, order, limit, mode, layout, autoReveal])
 
   const poolSize = useMemo(
     () =>
@@ -62,6 +66,7 @@ export default function QuizConfig({ course, onStart }) {
       limit: limit === 'all' ? 'all' : Number(limit),
       mode,
       layout,
+      autoReveal,
     })
 
   return (
@@ -192,8 +197,35 @@ export default function QuizConfig({ course, onStart }) {
         </div>
       </section>
 
+      {mode === 'practice' && (
+        <section className="mb-8">
+          <h2 className="font-semibold mb-2">5. Answer Reveal</h2>
+          <div className="flex gap-2">
+            {[
+              { id: true, name: 'Reveal on click', desc: 'Answer & solution appear the moment you pick an option' },
+              { id: false, name: 'Via Check Answer', desc: 'Pick first, then press Check Answer to reveal' },
+            ].map((r) => (
+              <button
+                key={String(r.id)}
+                onClick={() => setAutoReveal(r.id)}
+                className={`flex-1 text-left p-4 rounded-xl border transition ${
+                  autoReveal === r.id
+                    ? 'bg-blue-600 text-white border-blue-600'
+                    : 'border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800'
+                }`}
+              >
+                <div className="font-semibold text-sm">{r.name}</div>
+                <div className={`text-xs mt-1 ${autoReveal === r.id ? 'text-blue-100' : 'text-slate-500'}`}>
+                  {r.desc}
+                </div>
+              </button>
+            ))}
+          </div>
+        </section>
+      )}
+
       <section className="mb-8">
-        <h2 className="font-semibold mb-2">5. View Layout</h2>
+        <h2 className="font-semibold mb-2">6. View Layout</h2>
         <div className="flex gap-2">
           {[
             { id: 'paged', name: 'One question per page', desc: 'Navigate with Prev/Next, one card at a time' },

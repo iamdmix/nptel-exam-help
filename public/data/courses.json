@@ -3746,6 +3746,162 @@
               "explanation": "QGIS is an open-source GIS software used for mapping and spatial analysis."
             }
           ]
+        },
+        {
+          "weekNumber": 12,
+          "title": "Week 12",
+          "questions": [
+            {
+              "id": "w12q1",
+              "type": "single_choice",
+              "question": "Open-source software generally allows users to __________.",
+              "options": [
+                "Freely redistribute software",
+                "Access source code",
+                "Download and use without licensing fees",
+                "All of the above"
+              ],
+              "answer": [
+                "All of the above"
+              ],
+              "explanation": "Open-source software provides free access, redistribution rights, and source code availability for modification and use."
+            },
+            {
+              "id": "w12q2",
+              "type": "single_choice",
+              "question": "OSSIM stands for __________.",
+              "options": [
+                "Open Source Software Image Map",
+                "Open Spatial System Image Model",
+                "Open Source Spatial Interface Model",
+                "Operational Satellite System Image Mapper"
+              ],
+              "answer": [
+                "Open Source Software Image Map"
+              ],
+              "explanation": "OSSIM is an open-source software framework used for remote sensing, image processing, and geospatial applications."
+            },
+            {
+              "id": "w12q3",
+              "type": "single_choice",
+              "question": "GDAL is mainly used for handling __________ geospatial data formats.",
+              "options": [
+                "Vector",
+                "Raster",
+                "Tabular",
+                "Statistical"
+              ],
+              "answer": [
+                "Raster"
+              ],
+              "explanation": "GDAL (Geospatial Data Abstraction Library) supports reading and writing raster geospatial data formats."
+            },
+            {
+              "id": "w12q4",
+              "type": "single_choice",
+              "question": "OGR library is mainly associated with __________ data formats.",
+              "options": [
+                "Raster",
+                "Vector",
+                "Image",
+                "Metadata"
+              ],
+              "answer": [
+                "Vector"
+              ],
+              "explanation": "OGR is the vector component of GDAL used for handling vector geospatial datasets."
+            },
+            {
+              "id": "w12q5",
+              "type": "single_choice",
+              "question": "GRASS GIS can process which type of spatial data?",
+              "options": [
+                "Raster only",
+                "Vector only",
+                "Both raster and vector",
+                "Neither raster nor vector"
+              ],
+              "answer": [
+                "Both raster and vector"
+              ],
+              "explanation": "GRASS GIS supports analysis and processing of both raster and vector spatial datasets."
+            },
+            {
+              "id": "w12q6",
+              "type": "single_choice",
+              "question": "FRAGSTATS is mainly used for __________.",
+              "options": [
+                "Spatial pattern analysis",
+                "Database encryption",
+                "GPS navigation",
+                "Image georeferencing"
+              ],
+              "answer": [
+                "Spatial pattern analysis"
+              ],
+              "explanation": "FRAGSTATS analyzes landscape patterns and spatial configurations in categorical maps."
+            },
+            {
+              "id": "w12q7",
+              "type": "single_choice",
+              "question": "In GeoServer, WFS stands for __________.",
+              "options": [
+                "Web Functional Service",
+                "Web Feature Service",
+                "Web File Service",
+                "Web Format Service"
+              ],
+              "answer": [
+                "Web Feature Service"
+              ],
+              "explanation": "WFS provides access to geographic feature data across the web using standard protocols."
+            },
+            {
+              "id": "w12q8",
+              "type": "single_choice",
+              "question": "OGC stands for __________.",
+              "options": [
+                "Open Geospatial Committee",
+                "Open Graphical Consortium",
+                "Open Geospatial Consortium",
+                "Operational Geospatial Consortium"
+              ],
+              "answer": [
+                "Open Geospatial Consortium"
+              ],
+              "explanation": "Open Geospatial Consortium develops standards for geospatial and location-based services."
+            },
+            {
+              "id": "w12q9",
+              "type": "single_choice",
+              "question": "Information describing the source, creation method, and quality of spatial data is known as __________.",
+              "options": [
+                "Metadata",
+                "Indexing",
+                "Overlay",
+                "Classification"
+              ],
+              "answer": [
+                "Metadata"
+              ],
+              "explanation": "Metadata provides details about spatial data such as origin, date, accuracy, and processing methods."
+            },
+            {
+              "id": "w12q10",
+              "type": "single_choice",
+              "question": "Which of the following are open-source operating systems?",
+              "options": [
+                "Ubuntu",
+                "Linux",
+                "Red Hat",
+                "All of the above"
+              ],
+              "answer": [
+                "All of the above"
+              ],
+              "explanation": "Ubuntu, Linux, and Red Hat are examples of open-source operating systems widely used in GIS and server environments."
+            }
+          ]
         }
       ]
     }

@@ -6,7 +6,7 @@ A mobile-responsive NPTEL Exam Practice & Testing web app. Supports multiple cou
 
 - Course selection screen with search/filter
 - Quiz configuration: week selection (individual / multiple / all weeks 0–12), question order (sequential / randomized), pool limit (10 / 25 / 50 / all), mode selection
-- Practice Mode: solutions revealed on demand via "Check Answer", flag questions, free navigation
+- Practice Mode: solutions revealed on demand via "Check Answer", or instantly on click with the "Reveal on click" option, flag questions, free navigation
 - Instant Test Mode: immediate right/wrong feedback with explanation and live score
 - Timed Mock Test: countdown timer with auto-submit and end-of-test summary
 - Question navigator grid with status colors (unanswered / answered / correct / incorrect / flagged)
@@ -38,7 +38,7 @@ To regenerate fresh placeholder data: `node scripts/generate-data.js`
 ## Courses Included
 
 - **Research Methodology** (NPTEL · SWAYAM) — Weeks 1–11 verified answers, Week 12 pending key
-- **Geographic Information System** (NPTEL · IIT Kharagpur · Jul-2026) — Weeks 0–11, 120 questions, answers & explanations transcribed directly from the official assignment solution PDFs
+- **Geographic Information System** (NPTEL · IIT Kharagpur · Jul-2026) — Weeks 0–12, 130 questions, answers & explanations transcribed directly from the official assignment solution PDFs
 
 ## Run Locally (Docker)
 

@@ -9,13 +9,15 @@ export function shuffle(arr) {
   return a
 }
 
-export function buildSession({ course, weekNumbers, order, limit, mode, layout }) {
+export function buildSession({ course, weekNumbers, order, limit, mode, layout, autoReveal }) {
   const pool = flattenQuestions(course).filter((q) => weekNumbers.includes(q.week))
   let selected = order === 'randomized' ? shuffle(pool) : pool
   if (limit && limit !== 'all') selected = selected.slice(0, Number(limit))
   return {
     mode, // 'practice' | 'instant' | 'mock'
     layout: layout === 'scroll' ? 'scroll' : 'paged',
+    // practice only: reveal correctness immediately on pick instead of via Check Answer
+    autoReveal: mode === 'practice' && autoReveal === true,
     course,
     questions: selected,
     answers: {},

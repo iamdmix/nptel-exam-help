@@ -15,7 +15,9 @@ function StatusDot({ state }) {
 export default function Quiz({ session, setSession, onFinish }) {
   const { questions, answers, flags, graded, mode } = session
   const scroll = session.layout === 'scroll'
-  const autoGrade = mode === 'instant' // Instant Test grades on click; Practice grades on demand
+  // Instant Test grades on click; Practice grades on demand unless auto-reveal is on
+  const autoGrade =
+    mode === 'instant' || (mode === 'practice' && session.autoReveal === true)
   const showFeedback = mode !== 'mock'
   // current question index lives in the session so navigating away and back
   // (browser back/forward, results review) restores the position
