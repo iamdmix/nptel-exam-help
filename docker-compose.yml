@@ -3,5 +3,5 @@ services:
     build: .
     container_name: nptel-exam-help
     ports:
-      - "8080:80"
+      - "8082:80"
     restart: unless-stopped
